@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-11-2024 a las 13:18:57
+-- Tiempo de generación: 20-02-2025 a las 16:41:02
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -6682,9 +6682,9 @@ DELIMITER ;
 
 CREATE TABLE `alumnos` (
   `Id_alumno` int(11) NOT NULL,
-  `alum_dni` char(8) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `alum_dni` char(8) NOT NULL,
   `alum_nombre` varchar(100) DEFAULT NULL,
-  `alum_apepat` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `alum_apepat` varchar(100) DEFAULT NULL,
   `alum_apemat` varchar(100) DEFAULT NULL,
   `alum_sexo` enum('FEMENINO','MASCULINO') DEFAULT NULL,
   `alum_fechanacimiento` date DEFAULT NULL,
@@ -6696,21 +6696,32 @@ CREATE TABLE `alumnos` (
   `alum_fotoperfil` varchar(255) NOT NULL DEFAULT 'Fotos/admin.png',
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Volcado de datos para la tabla `alumnos`
 --
 
 INSERT INTO `alumnos` (`Id_alumno`, `alum_dni`, `alum_nombre`, `alum_apepat`, `alum_apemat`, `alum_sexo`, `alum_fechanacimiento`, `Edad`, `alum_movil`, `alum_direccion`, `alum_estatus`, `tipo_alum`, `alum_fotoperfil`, `created_at`, `updated_at`) VALUES
-(1, '18515151', 'JOSE', 'CHIPA', 'DAMIAN', 'MASCULINO', '2021-07-15', 2, '992262662', 'AV. CIRCUNVALACIÓN N° 447', 'NO', 'NUEVO', 'controller/alumnos/fotos/IMG6-7-2024-10-238.jpg', '2024-07-06 10:49:06', '2024-07-06 10:52:08'),
-(2, '26622626', 'DANIEL JAIMES', 'PEREZ', 'DAVILAS', 'MASCULINO', '2020-10-15', 3, '926226622', 'AV. CANADA N° 514', 'NO', 'ANTIGUO', 'controller/alumnos/fotos/IMG20-7-2024-11-242.jpg', '2024-07-06 10:53:08', '2024-07-20 11:31:26'),
-(3, '95262626', 'ANDREA', 'VALVERDE', 'CASAFRANCA', 'FEMENINO', '2021-01-12', 3, '992626626', 'JR. GUATEMALA N° 478', 'SI', 'ANTIGUO', 'controller/alumnos/fotos/IMG6-7-2024-11-957.jpg', '2024-07-06 10:59:07', '2024-07-06 11:01:22'),
-(4, '59222662', 'ESTEFANY', 'COAQUIRA', 'CHIPANA', 'FEMENINO', '2018-02-15', 6, '922662262', 'JR. HUANCAVELICA N° 887', 'SI', 'ANTIGUO', 'controller/alumnos/fotos/IMG11-10-2024-14-622.jpg', '2024-07-06 11:12:03', '2024-07-06 11:12:19'),
-(5, '62626262', 'JUAN CARLOS', 'SANCHEZ', 'JIMENES', 'MASCULINO', '2015-05-15', 9, '929929229', 'JR. CUSCO N° 145', '', NULL, 'controller/alumnos/fotos/IMG2-8-2024-16-103.jpg', '2024-08-02 16:05:17', '2024-08-02 16:05:25'),
-(6, '66655656', 'YESSENIA', 'CAMACHO', 'PERALTA', 'FEMENINO', '2010-07-14', 14, '952626262', 'AV. CANADA N° 121', 'SI', 'ANTIGUO', 'controller/alumnos/fotos/', '2024-09-10 14:09:30', '0000-00-00 00:00:00'),
-(7, '52220200', 'JOSE LUIS', 'JIMENEZ', 'DAVILA', 'MASCULINO', '2010-06-14', 14, '929292662', 'AV. NUÑEZ N° 232', 'SI', 'ANTIGUO', 'controller/alumnos/fotos/IMG1-10-2024-14-175.jpg', '2024-09-10 14:10:49', '2024-09-11 16:52:11'),
-(8, '51165511', 'JHOSEP', 'CHAVEZ', 'PEREZ', 'MASCULINO', '2010-07-15', 14, '992299292', 'JR. CANADA N° 848', 'SI', 'ANTIGUO', 'controller/alumnos/fotos/IMG8-10-2024-12-473.jpg', '2024-10-08 12:21:47', '0000-00-00 00:00:00');
+(10, '62053779', 'ANNDRÉ ALESSANDRO', 'AGRADA', 'SEQUEIROS ', 'MASCULINO', '2009-05-13', 15, '', 'JR. JUAN PABLO CASTRO SN', 'SI', 'ANTIGUO', 'controller/alumnos/fotos/IMG21-1-2025-22-934.jpg', '2024-12-31 10:03:05', '2025-01-21 22:35:48'),
+(11, '61535395', 'JAMES FABRICIO', 'ARANDO ', 'CAMACHO', 'MASCULINO', '2010-01-24', 14, '927865432', 'JR.AYACUCHO', 'SI', 'ANTIGUO', 'controller/alumnos/fotos/IMG21-1-2025-22-418.jpg', '2024-12-04 12:06:22', '2025-01-21 22:36:10'),
+(12, '61535499', 'MIGUEL ALEXIS', 'BARRIOS ', 'CCAHUANA', 'MASCULINO', '2011-03-13', 13, '31020284', 'JR.APURIMAC', 'SI', 'ANTIGUO', 'controller/alumnos/fotos/IMG21-1-2025-22-535.png', '2024-12-04 12:18:24', '2025-01-21 22:37:19'),
+(13, '71680344', 'NIKOLAS', 'BECERRA', 'GARCIA', 'MASCULINO', '2010-04-15', 14, '967890098', 'JR.DIAS VARCENAS', 'SI', 'ANTIGUO', 'controller/alumnos/fotos/IMG21-1-2025-22-746.jfif', '2024-12-04 12:31:42', '2025-01-21 22:37:37'),
+(14, '61535525', 'SAUL SEBASTIAN ', 'CAMACHO', 'VILLAFUERTE', 'MASCULINO', '2009-04-14', 15, '987667543', 'JR.CIRCUNVALACION', 'SI', 'ANTIGUO', 'controller/alumnos/fotos/IMG21-1-2025-22-218.jfif', '2024-12-04 12:49:29', '2025-01-21 22:38:49'),
+(15, '61432525', 'JOAQUIN', 'CHACON ', 'ESCALANTE', 'MASCULINO', '2011-05-05', 13, '921345676', 'JR.ARICA', 'SI', 'ANTIGUO', 'controller/alumnos/fotos/IMG21-1-2025-22-664.avif', '2024-12-04 12:55:11', '2025-01-21 22:39:22'),
+(16, '72833677', 'ADRIANO BEDE', 'CHALCO ', 'MENDOZA', 'MASCULINO', '2009-01-10', 16, '954876678', 'AV.ABANCAY', 'NO', 'NUEVO', 'controller/alumnos/fotos/IMG21-1-2025-22-872.avif', '2024-12-04 13:04:25', '2025-01-21 22:39:42'),
+(17, '60657373', 'JOHAM JONAS', 'HUALLPAMAITA', 'PIÑAN', 'MASCULINO', '2010-05-08', 14, '945345543', 'AV.EL ARCO', 'SI', 'ANTIGUO', 'controller/alumnos/fotos/IMG21-1-2025-22-843.avif', '2024-12-04 13:15:50', '2025-01-21 22:40:11'),
+(18, '61432692', 'RENZO GIORDANO ', 'LIMA', 'VILLASANTE', 'MASCULINO', '2010-03-10', 14, '983839491', 'AV.BRASIL', 'NO', 'NUEVO', 'controller/alumnos/fotos/IMG21-1-2025-22-509.jpg', '2024-12-04 16:16:57', '2025-01-21 22:36:40'),
+(19, '61535537', 'NIKOLAS CAMILO', 'MIRADA ', 'SARAVIA', 'MASCULINO', '2010-06-04', 14, '912543876', 'AV.CANADA', 'SI', 'ANTIGUO', 'controller/alumnos/fotos/IMG21-1-2025-22-629.jpg', '2024-12-04 16:30:57', '2025-01-21 22:36:23'),
+(20, '61299877', 'FRANCISCO ARTURO', 'MORA ', 'SANCHEZ', 'MASCULINO', '2010-08-17', 14, '912432123', 'AV.VENEZUELA', 'NO', 'NUEVO', 'controller/alumnos/fotos/IMG4-12-2024-16-490.avif', '2024-12-04 16:50:16', '0000-00-00 00:00:00'),
+(21, '60384137', 'ANGELO CHARLES', 'OTAZU', 'AYERBE', 'MASCULINO', '2009-12-01', 15, '956765345', 'AV.BRASIL', 'SI', 'ANTIGUO', 'controller/alumnos/fotos/IMG4-12-2024-17-328.avif', '2024-12-04 17:03:02', '0000-00-00 00:00:00'),
+(22, '60617523', 'MARIO GABRIEL', 'PIMENTEL ', 'ESCOBAL', 'MASCULINO', '2009-12-24', 14, '927025563', 'JR.JUNIN', 'NO', 'NUEVO', 'controller/alumnos/fotos/IMG4-12-2024-17-734.avif', '2024-12-04 17:40:52', '0000-00-00 00:00:00'),
+(23, '60641625', 'CARLOS ERIC', 'PONCE', 'BENAVIDES', 'MASCULINO', '2010-07-26', 14, '948765729', 'JR.PUNO', 'SI', 'ANTIGUO', 'controller/alumnos/fotos/IMG4-12-2024-17-759.avif', '2024-12-04 17:47:35', '0000-00-00 00:00:00'),
+(24, '61356410', 'DIEGO SAMUEL ', 'PORTILLO', 'SIHUIN', 'MASCULINO', '2009-11-28', 15, '956786666', 'JR.SAN ISIDRO', 'SI', 'ANTIGUO', 'controller/alumnos/fotos/IMG22-1-2025-19-473.jpg', '2024-12-04 17:58:08', '0000-00-00 00:00:00'),
+(25, '61356444', 'JAIRO ADRIANO ', 'RODRIGUEZ', 'WARTHON', 'MASCULINO', '2009-12-29', 15, '937356462', 'JR.ARICA', 'SI', 'ANTIGUO', 'controller/alumnos/fotos/IMG22-1-2025-19-785.jpg', '2024-12-04 18:03:46', '2025-01-22 18:49:37'),
+(26, '61432609', 'JEUS RAY', 'VILLAVICENCIO ', 'VARGAS', 'MASCULINO', '2010-01-04', 14, '987436587', 'JR.GARDENIAS', 'SI', 'ANTIGUO', 'controller/alumnos/fotos/IMG22-1-2025-16-836.jpg', '2024-12-04 18:12:59', '0000-00-00 00:00:00'),
+(27, '60542849', 'ALEX ERICK', 'PAREJA', 'QUINTANILLA', 'MASCULINO', '2011-09-05', 13, '924378432', 'JR.APURIMAC', 'SI', 'ANTIGUO', 'controller/alumnos/fotos/IMG22-1-2025-16-711.jpg', '2024-12-04 18:23:10', '0000-00-00 00:00:00'),
+(28, '71898359', 'ROONNY FRANKLIN', 'CRUZ ', 'CARRASCO', 'MASCULINO', '2010-11-03', 14, '983557353', 'URB. SAN MARTIN', 'SI', 'ANTIGUO', 'controller/alumnos/fotos/IMG22-1-2025-6-310.avif', '2025-01-22 06:19:56', '2025-01-22 12:32:04');
 
 -- --------------------------------------------------------
 
@@ -6733,36 +6744,23 @@ CREATE TABLE `asignaturas` (
 --
 
 INSERT INTO `asignaturas` (`Id_asignatura`, `nombre_asig`, `Id_grado`, `observaciones`, `estado`, `created_at`, `updated_at`) VALUES
-(2, 'COMUNICACIÓN INTEGRAL', 5, 'NINGUNA', 'CON DOCENTE', '2024-07-08', '2024-07-08 17:07:04'),
-(4, 'CIENCIA Y AMBIENTE', 5, 'NINGUNA', 'CON DOCENTE', '2024-07-08', '0000-00-00 00:00:00'),
-(7, 'PERSONAL SOCIAL', 5, '', 'CON DOCENTE', '2024-08-01', '0000-00-00 00:00:00'),
-(8, 'RAZONAMIENTO MATEMATICO', 5, '', 'CON DOCENTE', '2024-08-01', '0000-00-00 00:00:00'),
-(9, 'COMUNICACION INTEGRAL', 6, '', 'CON DOCENTE', '2024-08-02', '0000-00-00 00:00:00'),
-(10, 'SOCIALES', 18, '', 'SIN DOCENTE', '2024-09-04', '0000-00-00 00:00:00'),
-(11, 'ANATOMIA', 18, 'CORRECTO', 'SIN DOCENTE', '2024-09-04', '2024-09-08 16:48:34'),
-(12, 'BIOLOGIA', 18, '', 'SIN DOCENTE', '2024-09-04', '0000-00-00 00:00:00'),
-(13, 'ALGEBRA', 18, '', 'SIN DOCENTE', '2024-09-04', '0000-00-00 00:00:00'),
-(14, 'EDUCACION FISICA', 18, '', 'SIN DOCENTE', '2024-09-04', '0000-00-00 00:00:00'),
-(15, 'GEOMETRIA', 18, '', 'SIN DOCENTE', '2024-09-04', '0000-00-00 00:00:00'),
-(16, 'COMUNICACION', 18, '', 'SIN DOCENTE', '2024-09-04', '0000-00-00 00:00:00'),
-(17, 'FISICA', 18, '', 'SIN DOCENTE', '2024-09-04', '0000-00-00 00:00:00'),
-(18, 'DPCC', 18, '', 'SIN DOCENTE', '2024-09-04', '0000-00-00 00:00:00'),
-(19, 'QUIMICA', 18, '', 'SIN DOCENTE', '2024-09-04', '0000-00-00 00:00:00'),
-(20, 'RELIGION', 18, '', 'SIN DOCENTE', '2024-09-04', '0000-00-00 00:00:00'),
-(21, 'TUTORIA', 18, '', 'SIN DOCENTE', '2024-09-04', '0000-00-00 00:00:00'),
-(22, 'INGLES', 18, '', 'SIN DOCENTE', '2024-09-04', '0000-00-00 00:00:00'),
-(23, 'RAZONAMIENTO MATEMATICO', 18, '', 'SIN DOCENTE', '2024-09-04', '0000-00-00 00:00:00'),
-(24, 'ARITMETICA', 18, '', 'SIN DOCENTE', '2024-09-04', '0000-00-00 00:00:00'),
-(25, 'COMPUTACION', 18, '', 'SIN DOCENTE', '2024-09-04', '0000-00-00 00:00:00'),
-(26, 'TRIGONOMETRIA', 18, '', 'SIN DOCENTE', '2024-09-04', '0000-00-00 00:00:00'),
-(27, 'ARTE', 18, '', 'SIN DOCENTE', '2024-09-04', '0000-00-00 00:00:00'),
-(28, 'RECREO', 18, '', 'SIN DOCENTE', '2024-09-04', '2024-09-04 17:09:42'),
-(29, 'PERSONAL SOCIAL', 6, '', 'CON DOCENTE', '2024-09-08', '0000-00-00 00:00:00'),
-(30, 'MATEMATICA', 18, '', 'SIN DOCENTE', '2024-09-10', '0000-00-00 00:00:00'),
-(31, 'MATEMATICA', 15, '', 'CON DOCENTE', '2024-09-10', '0000-00-00 00:00:00'),
-(32, 'COMUNICACIÓN', 15, '', 'CON DOCENTE', '2024-09-10', '0000-00-00 00:00:00'),
-(33, 'FISICA', 15, '', 'CON DOCENTE', '2024-09-10', '0000-00-00 00:00:00'),
-(34, 'QUIMICA', 15, '', 'CON DOCENTE', '2024-09-10', '0000-00-00 00:00:00');
+(35, 'CIENCIAS SOCIALES', 22, '', 'SIN DOCENTE', '2025-01-02', '0000-00-00 00:00:00'),
+(36, 'EDUCACION FISICA', 22, '', 'CON DOCENTE', '2025-01-02', '0000-00-00 00:00:00'),
+(37, 'COMUNICACION', 22, '', 'CON DOCENTE', '2025-01-02', '0000-00-00 00:00:00'),
+(38, 'ARITMETICA', 22, '', 'CON DOCENTE', '2025-01-02', '0000-00-00 00:00:00'),
+(39, 'ANATOMIA', 22, '', 'CON DOCENTE', '2025-01-02', '0000-00-00 00:00:00'),
+(40, 'GEOMETRIA', 22, '', 'CON DOCENTE', '2025-01-02', '0000-00-00 00:00:00'),
+(41, 'DESARROLLO PERSONAL CC', 22, '', 'SIN DOCENTE', '2025-01-02', '0000-00-00 00:00:00'),
+(42, 'QUIMICA', 22, '', 'SIN DOCENTE', '2025-01-02', '0000-00-00 00:00:00'),
+(43, 'INGLES', 22, '', 'CON DOCENTE', '2025-01-02', '0000-00-00 00:00:00'),
+(44, 'RELIGION', 22, '', 'CON DOCENTE', '2025-01-02', '0000-00-00 00:00:00'),
+(45, 'TRIGONOMETRIA', 22, '', 'CON DOCENTE', '2025-01-02', '0000-00-00 00:00:00'),
+(46, 'ALGEBRA', 22, '', 'CON DOCENTE', '2025-01-02', '0000-00-00 00:00:00'),
+(47, 'FISICA', 22, '', 'CON DOCENTE', '2025-01-02', '0000-00-00 00:00:00'),
+(48, 'RAZONAMIENTO MATEMATICO', 22, '', 'CON DOCENTE', '2025-01-02', '0000-00-00 00:00:00'),
+(49, 'ARTE', 22, '', 'CON DOCENTE', '2025-01-02', '0000-00-00 00:00:00'),
+(50, 'TUTORIA', 22, '', 'CON DOCENTE', '2025-01-22', '0000-00-00 00:00:00'),
+(51, 'BIOLOGIA', 22, '', 'CON DOCENTE', '2025-01-22', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -6784,13 +6782,16 @@ CREATE TABLE `asignatura_docente` (
 --
 
 INSERT INTO `asignatura_docente` (`Id_asigdocente`, `Id_docente`, `id_año`, `Total_cursos`, `created_at`, `updated_at`) VALUES
-(27, 1, 2, 1, '2024-08-01', '0000-00-00 00:00:00.000000'),
-(30, 1, 2, 1, '2024-08-01', '0000-00-00 00:00:00.000000'),
-(31, 15, 2, 1, '2024-08-02', '0000-00-00 00:00:00.000000'),
-(33, 11, 2, 1, '2024-09-04', '0000-00-00 00:00:00.000000'),
-(34, 6, 2, 1, '2024-09-10', '0000-00-00 00:00:00.000000'),
-(35, 10, 2, 1, '2024-09-10', '0000-00-00 00:00:00.000000'),
-(42, 2, 1, 2, '2024-09-23', '0000-00-00 00:00:00.000000');
+(44, 17, 5, 3, '2025-01-22', '0000-00-00 00:00:00.000000'),
+(45, 18, 5, 1, '2025-01-22', '0000-00-00 00:00:00.000000'),
+(46, 19, 5, 1, '2025-01-22', '0000-00-00 00:00:00.000000'),
+(47, 20, 5, 1, '2025-01-22', '0000-00-00 00:00:00.000000'),
+(48, 21, 5, 1, '2025-01-22', '0000-00-00 00:00:00.000000'),
+(49, 21, 5, 1, '2025-01-22', '0000-00-00 00:00:00.000000'),
+(50, 22, 5, 2, '2025-01-22', '0000-00-00 00:00:00.000000'),
+(52, 18, 5, 2, '2025-01-22', '0000-00-00 00:00:00.000000'),
+(53, 23, 5, 1, '2025-01-22', '0000-00-00 00:00:00.000000'),
+(54, 24, 5, 1, '2025-01-22', '0000-00-00 00:00:00.000000');
 
 -- --------------------------------------------------------
 
@@ -6814,32 +6815,58 @@ CREATE TABLE `asistencia` (
 --
 
 INSERT INTO `asistencia` (`id_asistencia`, `id_matricula`, `mes`, `fecha`, `estado`, `observacion`, `created_at`, `updated_at`) VALUES
-(11, 8, '8', '2024-08-13', 'PRESENTE', '', '2024-08-13', '2024-08-14 16:34:20'),
-(12, 27, '8', '2024-08-13', 'TARDE', '', '2024-08-13', '2024-08-14 16:34:20'),
-(13, 1, '8', '2024-08-14', 'PRESENTE', '', '2024-08-14', '2024-08-14 17:31:09'),
-(14, 14, '8', '2024-08-14', 'PRESENTE', '', '2024-08-14', '2024-08-14 17:31:09'),
-(15, 25, '8', '2024-08-14', 'PRESENTE', '', '2024-08-14', '2024-08-14 17:31:09'),
-(19, 1, '8', '2024-08-15', 'PRESENTE', '', '2024-08-15', '2024-08-15 16:07:17'),
-(20, 14, '8', '2024-08-15', 'PRESENTE', '', '2024-08-15', '2024-08-15 16:07:17'),
-(21, 25, '8', '2024-08-15', 'TARDE', '', '2024-08-15', '2024-08-15 16:07:17'),
-(22, 1, '8', '2024-08-16', 'PRESENTE', '', '2024-08-15', '2024-08-15 16:07:17'),
-(23, 14, '8', '2024-08-16', 'PRESENTE', '', '2024-08-15', '2024-08-15 16:07:17'),
-(24, 25, '8', '2024-08-16', 'TARDE', '', '2024-08-15', '2024-08-15 16:07:17'),
-(25, 1, '8', '2024-08-19', 'TARDE', '', '2024-08-15', '2024-08-15 16:07:17'),
-(26, 14, '8', '2024-08-19', 'AUSENTE', '', '2024-08-15', '2024-08-15 16:07:17'),
-(27, 25, '8', '2024-08-19', 'PRESENTE', '', '2024-08-15', '2024-08-15 16:07:17'),
-(28, 1, '8', '2024-08-20', 'TARDE', '', '2024-08-15', '2024-08-15 16:07:17'),
-(29, 14, '8', '2024-08-20', 'PRESENTE', '', '2024-08-15', '2024-08-15 16:07:17'),
-(30, 25, '8', '2024-08-20', 'JUSTIFICADO', '', '2024-08-15', '2024-08-15 16:07:17'),
-(31, 1, '9', '2024-09-08', 'PRESENTE', '', '2024-09-08', '2024-09-08 17:35:55'),
-(32, 14, '9', '2024-09-08', 'PRESENTE', '', '2024-09-08', '2024-09-08 17:35:55'),
-(33, 25, '9', '2024-09-08', 'AUSENTE', '', '2024-09-08', '2024-09-08 17:35:55'),
-(34, 1, '9', '2024-09-16', 'PRESENTE', '', '2024-09-16', NULL),
-(35, 14, '9', '2024-09-16', 'PRESENTE', '', '2024-09-16', NULL),
-(36, 25, '9', '2024-09-16', 'AUSENTE', '', '2024-09-16', NULL),
-(38, 29, '9', '2024-09-28', 'PRESENTE', '', '2024-09-28', NULL),
-(39, 29, '9', '2024-03-28', 'PRESENTE', '', '2024-09-28', NULL),
-(40, 29, '9', '2024-04-28', 'PRESENTE', '', '2024-09-28', NULL);
+(46, 32, '1', '2025-01-22', 'PRESENTE', '', '2025-01-22', '2025-01-22 21:37:17'),
+(47, 33, '1', '2025-01-22', 'JUSTIFICADO', 'presento certificado medido ', '2025-01-22', '2025-01-22 21:37:17'),
+(48, 34, '1', '2025-01-22', 'PRESENTE', '', '2025-01-22', '2025-01-22 21:37:17'),
+(49, 35, '1', '2025-01-22', 'AUSENTE', '', '2025-01-22', '2025-01-22 21:37:17'),
+(50, 36, '1', '2025-01-22', 'PRESENTE', '', '2025-01-22', '2025-01-22 21:37:18'),
+(51, 37, '1', '2025-01-22', 'TARDE', '', '2025-01-22', '2025-01-22 21:37:18'),
+(52, 38, '1', '2025-01-22', 'PRESENTE', '', '2025-01-22', '2025-01-22 21:37:18'),
+(53, 39, '1', '2025-01-22', 'PRESENTE', '', '2025-01-22', '2025-01-22 21:37:18'),
+(54, 40, '1', '2025-01-22', 'TARDE', '', '2025-01-22', '2025-01-22 21:37:18'),
+(55, 41, '1', '2025-01-22', 'PRESENTE', '', '2025-01-22', '2025-01-22 21:37:18'),
+(56, 42, '1', '2025-01-22', 'PRESENTE', '', '2025-01-22', '2025-01-22 21:37:18'),
+(57, 43, '1', '2025-01-22', 'PRESENTE', '', '2025-01-22', '2025-01-22 21:37:18'),
+(58, 44, '1', '2025-01-22', 'TARDE', '', '2025-01-22', '2025-01-22 21:37:18'),
+(59, 32, '1', '2025-01-28', 'PRESENTE', '', '2025-01-28', NULL),
+(60, 33, '1', '2025-01-28', 'TARDE', 'Alumno tiene cita médica en Essalud ', '2025-01-28', NULL),
+(61, 34, '1', '2025-01-28', 'PRESENTE', '', '2025-01-28', NULL),
+(62, 35, '1', '2025-01-28', 'PRESENTE', '', '2025-01-28', NULL),
+(63, 36, '1', '2025-01-28', 'PRESENTE', '', '2025-01-28', NULL),
+(64, 37, '1', '2025-01-28', 'PRESENTE', '', '2025-01-28', NULL),
+(65, 38, '1', '2025-01-28', 'PRESENTE', '', '2025-01-28', NULL),
+(66, 39, '1', '2025-01-28', 'PRESENTE', '', '2025-01-28', NULL),
+(67, 40, '1', '2025-01-28', 'PRESENTE', '', '2025-01-28', NULL),
+(68, 41, '1', '2025-01-28', 'PRESENTE', '', '2025-01-28', NULL),
+(69, 42, '1', '2025-01-28', 'PRESENTE', '', '2025-01-28', NULL),
+(70, 43, '1', '2025-01-28', 'PRESENTE', '', '2025-01-28', NULL),
+(71, 44, '1', '2025-01-28', 'PRESENTE', '', '2025-01-28', NULL),
+(72, 32, '1', '2025-01-29', 'PRESENTE', '', '2025-01-29', NULL),
+(73, 33, '1', '2025-01-29', 'PRESENTE', '', '2025-01-29', NULL),
+(74, 34, '1', '2025-01-29', 'PRESENTE', '', '2025-01-29', NULL),
+(75, 35, '1', '2025-01-29', 'PRESENTE', '', '2025-01-29', NULL),
+(76, 36, '1', '2025-01-29', 'PRESENTE', '', '2025-01-29', NULL),
+(77, 37, '1', '2025-01-29', 'PRESENTE', '', '2025-01-29', NULL),
+(78, 38, '1', '2025-01-29', 'PRESENTE', '', '2025-01-29', NULL),
+(79, 39, '1', '2025-01-29', 'AUSENTE', '', '2025-01-29', NULL),
+(80, 40, '1', '2025-01-29', 'PRESENTE', '', '2025-01-29', NULL),
+(81, 41, '1', '2025-01-29', 'TARDE', '', '2025-01-29', NULL),
+(82, 42, '1', '2025-01-29', 'PRESENTE', '', '2025-01-29', NULL),
+(83, 43, '1', '2025-01-29', 'AUSENTE', '', '2025-01-29', NULL),
+(84, 44, '1', '2025-01-29', 'PRESENTE', '', '2025-01-29', NULL),
+(85, 32, '2', '2025-02-10', 'TARDE', 'El alumno presento su certificado medido por atencion de salud', '2025-02-10', '2025-02-10 18:07:29'),
+(86, 33, '2', '2025-02-10', 'PRESENTE', '', '2025-02-10', '2025-02-10 18:07:29'),
+(87, 34, '2', '2025-02-10', 'PRESENTE', '', '2025-02-10', '2025-02-10 18:07:29'),
+(88, 35, '2', '2025-02-10', 'PRESENTE', '', '2025-02-10', '2025-02-10 18:07:29'),
+(89, 36, '2', '2025-02-10', 'PRESENTE', '', '2025-02-10', '2025-02-10 18:07:29'),
+(90, 37, '2', '2025-02-10', 'PRESENTE', '', '2025-02-10', '2025-02-10 18:07:29'),
+(91, 38, '2', '2025-02-10', 'PRESENTE', '', '2025-02-10', '2025-02-10 18:07:29'),
+(92, 39, '2', '2025-02-10', 'PRESENTE', '', '2025-02-10', '2025-02-10 18:07:29'),
+(93, 40, '2', '2025-02-10', 'PRESENTE', '', '2025-02-10', '2025-02-10 18:07:29'),
+(94, 41, '2', '2025-02-10', 'PRESENTE', '', '2025-02-10', '2025-02-10 18:07:29'),
+(95, 42, '2', '2025-02-10', 'PRESENTE', '', '2025-02-10', '2025-02-10 18:07:29'),
+(96, 43, '2', '2025-02-10', 'PRESENTE', '', '2025-02-10', '2025-02-10 18:07:29'),
+(97, 44, '2', '2025-02-10', 'PRESENTE', '', '2025-02-10', '2025-02-10 18:07:29');
 
 -- --------------------------------------------------------
 
@@ -6864,15 +6891,8 @@ CREATE TABLE `atencion_salud` (
 --
 
 INSERT INTO `atencion_salud` (`id_atencion`, `id_matricula`, `id_usuario`, `tipo_atencion`, `motivo_consulta`, `diagnostico`, `observaciones`, `created_at`, `updated_at`) VALUES
-(1, 1, 32, 'PSICOLOGIA', 'PROBLEMAS FAMILIARES', 'TERAPIAS DE 10 SESIONES 2 A LA SEMANA', 'EN TOTAL VENDRA 5 SEMANAS', '2024-07-31 00:00:00', '2024-07-31 16:54:56'),
-(2, 1, 32, 'PSICOLOGIA', 'BULLYN EN SALON 2', 'LLORA MUCHO 2', 'NINGUNA 2', '2024-07-31 16:24:50', '2024-07-31 16:53:57'),
-(3, 8, 32, 'PSICOLOGIA', 'PROBLEMAS FAMILIARES', 'TERAPIAS', 'TENDRA 5 TERAPIAS', '2024-07-31 16:43:17', '0000-00-00 00:00:00'),
-(4, 1, 50, 'ENFERMERIA', 'CAIDA DEL COLUMPIO', 'HERIDA LEVE', 'NINGUNA', '2024-08-01 15:21:39', '0000-00-00 00:00:00'),
-(5, 14, 50, 'ENFERMERIA', 'DOLOR DE CABEZA1', 'PUEDE SER EL MAL SUEÑO QUE TUVO1', 'DEBE DORMIR SUS 7 A 8 HORAS1', '2024-08-01 15:29:02', '2024-08-01 15:34:24'),
-(6, 1, 32, 'PSICOLOGIA', 'SESION 2 DE TERAPIA', '', '', '2024-08-02 16:28:11', '0000-00-00 00:00:00'),
-(7, 14, 32, 'PSICOLOGIA', 'SESION 3 DE TERAPIA', '', '', '2024-08-02 16:29:43', '0000-00-00 00:00:00'),
-(8, 27, 32, 'PSICOLOGIA', 'PELEAS', 'PELEAS', 'PELEAS', '2024-09-16 16:31:00', '0000-00-00 00:00:00'),
-(9, 27, 50, 'ENFERMERIA', 'BULLYN EN EL SALON', 'SE PELEA POR EL BULLYNG', 'TRATAMIENTO CADA SEMANA A LAS 10 PM LOS DIAS MIERCOLES', '2024-10-01 15:28:17', '0000-00-00 00:00:00');
+(10, 32, 58, 'ENFERMERIA', 'CAIDA DE COLUMPIO EN PATIO DE JUEGOS', 'HERIDA LEVE, SE PROCEDE A DAR ANTIFLAMRIO (PARACETAMOL 500MG)', '', '2025-01-22 10:23:43', '0000-00-00 00:00:00'),
+(11, 34, 57, 'PSICOLOGIA', 'PROBLEMAS FAMILIARES', 'TERAPIA DE 10 SESIONES 2 VECES A LA SEMANA', 'TOTAL DE TERAPIAS 5 SEMANAS', '2025-01-22 10:27:55', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -6896,21 +6916,11 @@ CREATE TABLE `aulas` (
 --
 
 INSERT INTO `aulas` (`Id_aula`, `Grado`, `id_nivel_academico`, `id_seccion`, `descripcion`, `estado`, `created_at`, `updated`) VALUES
-(4, 'TODOS', 5, 7, 'HACE REFERENCIA A TODOS', 'ACTIVO', '2024-08-04 11:28:59', '0000-00-00 00:00:00'),
-(5, '3 AÑOS', 1, 7, 'SALON PARA LOS NIÑOS DE 3 AÑOS', 'ACTIVO', '2024-06-23 11:38:04', '2024-07-16 17:13:05'),
-(6, '4 AÑOS', 1, 7, 'SALON PARA LOS NIÑOS DE 4 AÑOS', 'ACTIVO', '2024-07-16 17:12:17', '0000-00-00 00:00:00'),
-(7, '5 AÑOS', 1, 7, 'SALON PARA LOS NIÑOS DE 5 AÑOS ULTIMO GRADO DE INICIAL', 'ACTIVO', '2024-07-16 17:12:42', '0000-00-00 00:00:00'),
-(8, 'PRIMER GRADO', 2, 7, 'SALON PARA LOS NIÑOS DE 6 AÑOS', 'ACTIVO', '2024-07-16 17:12:54', '0000-00-00 00:00:00'),
-(9, 'SEGUNDO GRADO', 2, 7, 'SALON PARA LOS NIÑOS DE 7 AÑOS', 'ACTIVO', '2024-07-16 17:13:16', '0000-00-00 00:00:00'),
-(10, 'TERCER GRADO', 2, 7, 'SALON PARA LOS NIÑOS DE 8 AÑOS', 'ACTIVO', '2024-07-16 17:13:30', '0000-00-00 00:00:00'),
-(11, 'CUARTO GRADO', 2, 7, 'SALON PARA LOS NIÑOS DE 9 AÑOS', 'ACTIVO', '2024-07-16 17:13:40', '0000-00-00 00:00:00'),
-(12, 'QUINTO GRADO', 2, 7, 'SALON PARA LOS NIÑOS DE 10 AÑOS', 'ACTIVO', '2024-07-16 17:13:50', '0000-00-00 00:00:00'),
-(13, 'SEXTO GRADO', 2, 7, 'SALON PARA LOS NIÑOS DE 11 AÑOS', 'ACTIVO', '2024-07-16 17:14:02', '0000-00-00 00:00:00'),
-(14, 'PRIMER GRADO', 3, 7, 'SALON PARA LOS ADOLESCENTES DE 12 AÑOS', 'ACTIVO', '2024-07-16 17:14:28', '0000-00-00 00:00:00'),
-(15, 'SEGUNDO GRADO', 3, 7, 'SALON PARA LOS ADOLESCENTES DE 13 AÑOS', 'ACTIVO', '2024-07-16 17:14:35', '2024-07-16 17:15:22'),
-(16, 'TERCER GRADO', 3, 7, 'SALON PARA LOS ADOLESCENTES DE 14 AÑOS', 'ACTIVO', '2024-07-16 17:14:46', '0000-00-00 00:00:00'),
-(17, 'CUARTO GRADO', 3, 7, 'SALON PARA LOS ADOLESCENTES DE 15 AÑOS', 'ACTIVO', '2024-07-16 17:14:54', '0000-00-00 00:00:00'),
-(18, 'QUINTO GRADO', 3, 7, 'SALON PARA LOS ADOLESCENTES DE 16 AÑOS ES EL ULTIMO AÑO QUE SE CURSA', 'ACTIVO', '2024-07-16 17:15:10', '0000-00-00 00:00:00');
+(15, 'TODOS', 5, 11, 'TODOS', 'ACTIVO', '2025-01-23 15:52:03', '0000-00-00 00:00:00'),
+(20, 'SEGUNDO GRADO', 3, 7, 'SEGUNDO GRADO DE SECUNDARIA', 'ACTIVO', '2025-01-02 17:56:05', '0000-00-00 00:00:00'),
+(21, 'TERCER GRADO', 3, 7, 'TERCER GRADO DE SECUNDARIA', 'ACTIVO', '2025-01-02 17:56:46', '0000-00-00 00:00:00'),
+(22, 'CUARTO GRADO', 3, 7, 'CUARTO GRADO DE SECUNDARIA', 'ACTIVO', '2025-01-02 17:57:29', '0000-00-00 00:00:00'),
+(23, 'QUINTO GRADO', 3, 7, 'QUINTO GRADO DE SECUNDARIA', 'ACTIVO', '2025-01-02 17:57:58', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -6935,21 +6945,7 @@ CREATE TABLE `auxiliar` (
   `id_usuario` int(11) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci ROW_FORMAT=DYNAMIC;
-
---
--- Volcado de datos para la tabla `auxiliar`
---
-
-INSERT INTO `auxiliar` (`auxiliar_id`, `auxiliar_dni`, `auxiliar_nombre`, `auxiliar_apepat`, `auxiliar_apemat`, `auxiliar_sexo`, `auxiliar_fechanacimiento`, `auxiliar_movil`, `auxiliar_nro_alterno`, `auxiliar_direccion`, `auxiliar_tipo_contrato`, `auxiliar_estatus`, `auxiliar_fotoperfil`, `id_usuario`, `created_at`, `updated_at`) VALUES
-(1, 'JERSSON', NULL, 'CORILLA', 'MIRANDA', NULL, '2023-03-31', '918654046', NULL, 'JR. NICOLAS DE PIEROLA Nº 105', NULL, 'ACTIVO', 'controller/empleado/FOTOS/IMG28-8-2023-11-64.jpg', NULL, NULL, NULL),
-(2, 'JOSE', NULL, 'SANCHEZ', 'MEDINA', NULL, '1985-01-24', '926262625', NULL, 'JR. CHALHUANCA N° 222', NULL, 'ACTIVO', 'controller/empleado/FOTOS/IMG28-8-2023-11-195.png', NULL, NULL, NULL),
-(3, 'ANDREA', NULL, 'SANCHEZ', 'JIMENEZ', NULL, '1995-01-24', '966226262', NULL, 'AV. DIAZ BARCENAS N° 323', NULL, 'ACTIVO', 'controller/empleado/FOTOS/IMG28-8-2023-11-271.jpeg', NULL, NULL, NULL),
-(4, 'LUIS', NULL, 'CAMACHO', 'VELARDE', NULL, '1998-01-24', '926622656', NULL, 'JR. HUANCAVELICA N° 323', NULL, 'ACTIVO', 'controller/empleado/FOTOS/usuario.png', NULL, NULL, NULL),
-(5, 'JUAN CAR', NULL, 'MEDINA', 'SANCHEZ', NULL, '2000-07-25', '926161616', NULL, 'JR. CUSCO N° 323', NULL, 'ACTIVO', 'controller/empleado/FOTOS/usuario.png', NULL, NULL, NULL),
-(6, 'CELIA', NULL, 'MIRANDA', 'MUNGUIA', NULL, '1972-01-24', '988505521', NULL, 'JR NICOLAS DE PIEROLA N° 15', NULL, 'ACTIVO', 'controller/empleado/FOTOS/IMG29-8-2023-16-940.jpg', NULL, NULL, NULL),
-(7, 'WILFREDO', NULL, 'CARRIÓN', 'UMERES', NULL, '1995-05-11', '952541551', NULL, 'AV 28 DE ABRIL 235', NULL, 'ACTIVO', 'controller/empleado/FOTOS/IMG7-9-2023-18-768.jpg', NULL, NULL, NULL),
-(8, 'ELIAS', NULL, 'CARRIÓN', 'UMERES', NULL, '1985-05-25', '935951872', NULL, 'AV 28 DE ABRIL N° 234', NULL, 'ACTIVO', 'controller/empleado/FOTOS/IMG10-9-2023-11-957.jpg', NULL, NULL, NULL);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
 
@@ -6974,8 +6970,7 @@ CREATE TABLE `año_escolar` (
 --
 
 INSERT INTO `año_escolar` (`Id_año_escolar`, `año_escolar`, `Nombre_año`, `fecha_inicio`, `fecha_fin`, `descripcion`, `estado`, `created_at`, `updated_at`) VALUES
-(1, 2023, 'AÑO DE LA UNIDAD, LA PAZ Y EL DESARROLLO', '2023-03-13', '2023-12-22', 'BUEN AñO', 'INACTIVO', '2023-02-28 16:59:54', '2024-06-16 17:35:12'),
-(2, 2024, 'AñO DEL BICENTENARIO, DE LA CONSOLIDACIóN DE NUESTRA INDEPENDENCIA, Y DE LA CONMEMORACIóN DE LAS HEROICAS BATALLAS DE JUNíN Y AYACUCHO', '2024-03-04', '2024-12-20', 'AñO EN CURSO', 'ACTIVO', '2024-06-16 17:21:43', '0000-00-00 00:00:00');
+(5, 2025, 'AÑO DE LA RECUPERACIóN Y CONSOLIDACIóN DE LA ECONOMíA PERUANA', '2025-01-01', '2025-12-31', 'AÑO LECTIVO 2025', 'ACTIVO', '2025-01-21 16:24:43', '2025-01-21 17:45:29');
 
 -- --------------------------------------------------------
 
@@ -7001,9 +6996,8 @@ CREATE TABLE `comunicados` (
 --
 
 INSERT INTO `comunicados` (`id_comunicado`, `tipo`, `id_aula`, `titulo`, `descripcion`, `imagen`, `estado`, `id_usuario`, `created_at`, `updated_at`) VALUES
-(3, 'GENERAL', 4, 'REUNION PADRE DE FAMILIA 8 PM VIERNES 23', 'SE CITA A TODO LOS PADRES DE FAMILIA23', 'controller/comunicados/fotos/IMG4-8-2024-13-208.jpeg', 'INACTIVO', 9, '2024-08-04', '2024-10-11 14:27:47'),
-(6, 'POR GRADO', 5, 'RECEPCIÓN GENERAL DE ALUMNOS', 'SE REALIZARA LA RECEPCIÓN DE TODO LOS ALUMNOS EN EL COLEGIO A  LAS 11 AM', 'controller/comunicados/fotos/IMG4-8-2024-15-189.png', 'INACTIVO', 9, '2024-08-04', '2024-08-05 17:44:54'),
-(7, 'GENERAL', 5, 'REUNION PADRES DE FAMILIA VIERNES 4 DE OCTUBRE', 'SE CITA A TODO LOS PADRES DE FAMILIA A REUNIÓN VIERNES 74 DE OCTUBRE', 'controller/comunicados/fotos/IMG3-10-2024-15-825.jpg', 'INACTIVO', 9, '2024-10-03', '2024-10-11 14:29:42');
+(9, 'GENERAL', 15, 'COMUNICADO DE REÚNIONES', 'SE COMUNICA A TODOS LOS PADRES DE FAMILIA QUÉ LA REÚNION  SE LLEVARA A CABO DESDE LA 7:00 PM', 'controller/comunicados/fotos/IMG23-1-2025-15-121.jfif', 'ACTIVO', 56, '2025-01-23', '2025-01-28 18:16:39'),
+(10, 'GENERAL', 15, 'HOLA', 'HOLA', 'controller/comunicados/fotos/IMG10-2-2025-17-331.png', 'ACTIVO', 56, '2025-02-10', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -7026,26 +7020,35 @@ CREATE TABLE `criterios` (
 --
 
 INSERT INTO `criterios` (`id_criterio`, `id_detalle_asignatura`, `competencias`, `descripción_observa`, `estado`, `created_at`, `updated_at`) VALUES
-(1, 20, 'Escribe diversos tipos de texto en su lengua materna', '', 'ACTIVO', '2024-08-19', '2024-08-25 16:35:10'),
-(8, 20, 'Lee diversos tipos de texto en su lengua materna', '', 'ACTIVO', '2024-08-25', '0000-00-00 00:00:00'),
-(18, 20, 'Se comunica oralmente en su lengua materna', '', 'ACTIVO', '2024-08-25', '0000-00-00 00:00:00'),
-(19, 22, 'Resuelve problemas de cantidad', '', 'ACTIVO', '2024-08-25', '0000-00-00 00:00:00'),
-(20, 22, 'Resuelve problemas de regularidad, equivalencia y cambio', '', 'ACTIVO', '2024-08-25', '0000-00-00 00:00:00'),
-(21, 22, 'Resuelve problemas de forma, movimiento y localización', '', 'ACTIVO', '2024-08-25', '0000-00-00 00:00:00'),
-(28, 24, 'avanza con los ejercicios', '', 'ACTIVO', '2024-09-08', '0000-00-00 00:00:00'),
-(29, 64, 'Resuelve problemas de cantidad', '', 'ACTIVO', '2024-09-10', '0000-00-00 00:00:00'),
-(30, 64, 'Resuelve problemas de regularidad, equivalencia y cambio', '', 'ACTIVO', '2024-09-10', '0000-00-00 00:00:00'),
-(31, 64, 'Resuelve problemas de forma, movimiento y localización', '', 'ACTIVO', '2024-09-10', '0000-00-00 00:00:00'),
-(32, 64, 'Resuelve problemas de gestión de datos e incertidumbres', '', 'ACTIVO', '2024-09-10', '0000-00-00 00:00:00'),
-(33, 65, 'Se comunica oralmente en su lengua materna', '', 'ACTIVO', '2024-09-10', '0000-00-00 00:00:00'),
-(34, 65, 'Lee diversos tipos de texto en su lengua materna', '', 'ACTIVO', '2024-09-10', '0000-00-00 00:00:00'),
-(35, 65, 'Escribe diversos tipos de texto en su lengua materna', '', 'ACTIVO', '2024-09-10', '0000-00-00 00:00:00'),
-(36, 66, 'Indaga mediante métodos científicos para construir conocimientos', '', 'ACTIVO', '2024-09-10', '0000-00-00 00:00:00'),
-(37, 66, 'Explica el mundo fisico basandose en conocimineto sobre los seres vivios, materia y energia, biodive', '', 'ACTIVO', '2024-09-10', '0000-00-00 00:00:00'),
-(38, 66, 'Diseña y construye soluciones tecnológicas para resolver problemas de su entorno.', '', 'ACTIVO', '2024-09-10', '0000-00-00 00:00:00'),
-(39, 67, 'Indaga mediante metodos cientificos para construir conocimientos', '', 'ACTIVO', '2024-09-10', '0000-00-00 00:00:00'),
-(40, 67, 'Explica el mundo fisico basandose en conocimineto sobre los seres vivios, materia y energia, biodive', '', 'ACTIVO', '2024-09-10', '0000-00-00 00:00:00'),
-(41, 67, 'Diseña y construye soluciones tecnologicas para resolver problemas de su entorno.', '', 'ACTIVO', '2024-09-10', '0000-00-00 00:00:00');
+(42, 85, 'Se desenvuelve de manera autonoma a traves de su motricidad', '', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(43, 85, 'Asume una vida saludable', '', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(44, 85, 'Interactua a traves de sus habilidades sociomotrices', '', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(45, 77, 'Aprecia de manera critica manifestaciones artisticas-culturales', '', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(46, 77, 'Crea proyectos desde los lenguajes artisticos', '', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(47, 82, 'Indaga mediante métodos científicos para construir conocimientos', '', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(48, 82, 'Explica el mundo fisico basandose en conocimineto sobre los seres vivios, materia y energia, biodive', '', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(49, 82, 'Diseña y construye soluciones tecnologicas para resolver problemas de su entorno.', '', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(50, 78, 'Se comunica oralmente en su lengua materna', '', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(51, 78, 'Lee diversos tipos de texto en su lengua materna', '', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(52, 78, 'Escribe diversos tipos de texto en su lengua materna', '', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(53, 87, 'Asume la experiencia del encuentro personal y comunitario con Dios en su proyecto de vida en coheren', '', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(54, 87, 'Construye su identidad como persona humana, amada por Dios, digna, libre y transcendente, comprendie', '', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(55, 79, 'Se comunica oralmente en ingles como lengua extranjera', '', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(56, 79, 'Lee diversos tipos de textos escritos en ingles como lengua extranjera', '', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(57, 79, 'Escribe diversos tipos de textos en ingles como lengua extranjera', '', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(58, 81, 'Indaga mediante metodos cientificos para construir conocimientos', '', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(59, 81, 'Explica el mundo fisico basandose en conocimiento sobre los seres vivos', '', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(60, 81, 'Diseña y construye soluciones tecnologicas para resolver problemas de su entorno.', '', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(61, 83, 'Resolución de triángulos utilizando las razones trigonométricas', '', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(62, 83, 'Resolución de problemas con tablas de funciones trigonométricas', '', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(63, 83, 'Interpretación de resultados y comunicación de soluciones', '', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(64, 83, 'Uso adecuado de calculadoras y tecnología para resolver problemas', '', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(65, 75, 'Elige, al resolver un determinado problema, el tipo de cálculo adecuado (mental o manual), dando sig', '', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(66, 75, 'Utiliza y se vale del lenguaje algebraico para construir expresiones algebraicas y ecuaciones a part', '', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(69, 75, 'Utiliza los procedimientos básicos de la proporcionalidad numérica (como la regla de tres o el cálcu', '', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(70, 80, 'Uso correcto de la terminología anatómica.', '', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(71, 80, 'identificación precisa de estructuras anatómicas en modelos o esquemas.', '', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(72, 80, 'Aporte en discusiones o proyectos colaborativos', '', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -7066,36 +7069,20 @@ CREATE TABLE `detalle_asignatura_docente` (
 --
 
 INSERT INTO `detalle_asignatura_docente` (`Id_detalle_asig_docente`, `Id_asig_docente`, `Id_asignatura`, `created_at`, `updated_at`) VALUES
-(20, 30, 2, '2024-08-01', '0000-00-00 00:00:00.000000'),
-(21, 30, 4, '2024-08-01', '0000-00-00 00:00:00.000000'),
-(22, 30, 8, '2024-08-01', '2024-08-01 16:37:50.000000'),
-(23, 30, 7, '2024-08-01', '2024-08-01 16:38:21.000000'),
-(24, 31, 9, '2024-08-02', '0000-00-00 00:00:00.000000'),
-(44, 33, 10, '2024-09-04', '0000-00-00 00:00:00.000000'),
-(45, 33, 11, '2024-09-04', '0000-00-00 00:00:00.000000'),
-(46, 33, 12, '2024-09-04', '0000-00-00 00:00:00.000000'),
-(47, 33, 13, '2024-09-04', '0000-00-00 00:00:00.000000'),
-(48, 33, 14, '2024-09-04', '0000-00-00 00:00:00.000000'),
-(49, 33, 15, '2024-09-04', '0000-00-00 00:00:00.000000'),
-(50, 33, 16, '2024-09-04', '0000-00-00 00:00:00.000000'),
-(51, 33, 17, '2024-09-04', '0000-00-00 00:00:00.000000'),
-(52, 33, 18, '2024-09-04', '0000-00-00 00:00:00.000000'),
-(53, 33, 19, '2024-09-04', '0000-00-00 00:00:00.000000'),
-(54, 33, 20, '2024-09-04', '0000-00-00 00:00:00.000000'),
-(55, 33, 21, '2024-09-04', '0000-00-00 00:00:00.000000'),
-(56, 33, 22, '2024-09-04', '0000-00-00 00:00:00.000000'),
-(57, 33, 23, '2024-09-04', '0000-00-00 00:00:00.000000'),
-(58, 33, 24, '2024-09-04', '0000-00-00 00:00:00.000000'),
-(59, 33, 25, '2024-09-04', '0000-00-00 00:00:00.000000'),
-(60, 33, 26, '2024-09-04', '0000-00-00 00:00:00.000000'),
-(61, 33, 27, '2024-09-04', '0000-00-00 00:00:00.000000'),
-(62, 33, 28, '2024-09-04', '0000-00-00 00:00:00.000000'),
-(64, 34, 31, '2024-09-10', '0000-00-00 00:00:00.000000'),
-(65, 34, 32, '2024-09-10', '0000-00-00 00:00:00.000000'),
-(66, 35, 33, '2024-09-10', '0000-00-00 00:00:00.000000'),
-(67, 35, 34, '2024-09-10', '0000-00-00 00:00:00.000000'),
-(70, 42, 9, '2024-09-23', '0000-00-00 00:00:00.000000'),
-(71, 42, 29, '2024-09-23', '0000-00-00 00:00:00.000000');
+(74, 44, 38, '2025-01-22', '0000-00-00 00:00:00.000000'),
+(75, 44, 46, '2025-01-22', '0000-00-00 00:00:00.000000'),
+(76, 44, 40, '2025-01-22', '0000-00-00 00:00:00.000000'),
+(77, 45, 49, '2025-01-22', '0000-00-00 00:00:00.000000'),
+(78, 46, 37, '2025-01-22', '0000-00-00 00:00:00.000000'),
+(79, 47, 43, '2025-01-22', '0000-00-00 00:00:00.000000'),
+(80, 48, 39, '2025-01-22', '0000-00-00 00:00:00.000000'),
+(81, 49, 51, '2025-01-22', '0000-00-00 00:00:00.000000'),
+(82, 50, 47, '2025-01-22', '0000-00-00 00:00:00.000000'),
+(83, 50, 45, '2025-01-22', '0000-00-00 00:00:00.000000'),
+(85, 52, 36, '2025-01-22', '0000-00-00 00:00:00.000000'),
+(86, 52, 50, '2025-01-22', '0000-00-00 00:00:00.000000'),
+(87, 53, 44, '2025-01-22', '0000-00-00 00:00:00.000000'),
+(88, 54, 48, '2025-01-22', '0000-00-00 00:00:00.000000');
 
 -- --------------------------------------------------------
 
@@ -7121,21 +7108,23 @@ CREATE TABLE `detalle_tarea` (
 --
 
 INSERT INTO `detalle_tarea` (`id_detalle_tarea`, `id_tarea`, `id_matriculado`, `archivo_evnio_tarea`, `calificacion`, `observacion`, `estado`, `fecha_envio`, `created_at`, `updated_at`) VALUES
-(22, 'T0000001', 1, '', 15, '', 'CALIFICADO', '0000-00-00 00:00:00', '2024-08-07', '0000-00-00 00:00:00'),
-(23, 'T0000001', 14, '', 5, 'NO ENTREGO TAREA', 'CALIFICADO', '0000-00-00 00:00:00', '2024-08-07', '2024-09-23 14:16:22'),
-(24, 'T0000001', 25, '', 5, 'NO ENTREGO TAREA', 'CALIFICADO', '0000-00-00 00:00:00', '2024-08-07', '2024-09-23 14:16:22'),
-(25, 'T0000002', 1, '', 5, 'NO ENTREGO TAREA', 'CALIFICADO', '0000-00-00 00:00:00', '2024-08-07', '2024-09-23 14:16:22'),
-(26, 'T0000002', 14, '', 5, 'NO ENTREGO TAREA', 'CALIFICADO', '0000-00-00 00:00:00', '2024-08-07', '2024-09-23 14:16:22'),
-(27, 'T0000002', 25, '', 5, 'NO ENTREGO TAREA', 'CALIFICADO', '0000-00-00 00:00:00', '2024-08-07', '2024-09-23 14:16:22'),
-(29, 'T0000003', 29, 'controller/tareas/documentos/tarea_alumnos_1726932287', 18, '', 'CALIFICADO', '2024-09-21 10:24:47', '2024-09-10', '0000-00-00 00:00:00'),
-(31, 'T0000004', 29, 'controller/tareas/documentos/tarea_alumnos_1726934626', 14, '', 'CALIFICADO', '2024-09-21 10:24:02', '2024-09-10', '2024-09-21 11:03:46'),
-(33, 'T0000005', 29, 'controller/tareas/documentos/tarea_alumnos_1726937938', 9, '', 'CALIFICADO', '2024-09-21 11:58:58', '2024-09-11', '2024-09-21 11:03:07'),
-(35, 'T0000006', 29, 'controller/tareas/documentos/tarea_alumnos_1727119352', 12, '', 'CALIFICADO', '2024-09-23 14:22:32', '2024-09-23', '2024-09-23 14:20:12'),
-(37, 'T0000007', 29, 'controller/tareas/documentos/tarea_alumnos_1727119178', 15, '', 'CALIFICADO', '2024-09-23 14:19:38', '2024-09-23', '0000-00-00 00:00:00'),
-(38, 'T0000009', 8, '', 0, '', 'PENDIENTE', '0000-00-00 00:00:00', '2024-10-10', '0000-00-00 00:00:00'),
-(39, 'T0000009', 27, '', 0, '', 'PENDIENTE', '0000-00-00 00:00:00', '2024-10-10', '0000-00-00 00:00:00'),
-(40, 'T0000010', 29, 'controller/tareas/documentos/tarea_alumnos_1728855799', 0, '', 'ENVIADO', '2024-10-13 16:43:19', '2024-10-12', '0000-00-00 00:00:00'),
-(41, 'T0000011', 29, '', 0, '', 'PENDIENTE', '0000-00-00 00:00:00', '2024-10-13', '0000-00-00 00:00:00');
+(43, 'T0000001', 32, '', 5, 'NO ENTREGO TAREA', 'CALIFICADO', '0000-00-00 00:00:00', '2025-01-22', '2025-01-22 11:35:30'),
+(44, 'T0000001', 33, '', 5, 'NO ENTREGO TAREA', 'CALIFICADO', '0000-00-00 00:00:00', '2025-01-22', '2025-01-22 11:35:30'),
+(45, 'T0000001', 34, '', 5, 'NO ENTREGO TAREA', 'CALIFICADO', '0000-00-00 00:00:00', '2025-01-22', '2025-01-22 11:35:30'),
+(46, 'T0000001', 35, '', 5, 'NO ENTREGO TAREA', 'CALIFICADO', '0000-00-00 00:00:00', '2025-01-22', '2025-01-22 11:35:30'),
+(47, 'T0000002', 32, 'controller/tareas/documentos/tarea_alumnos_1739230004', 0, '', 'ENVIADO', '2025-02-10 18:26:44', '2025-02-10', '0000-00-00 00:00:00'),
+(48, 'T0000002', 33, '', 0, '', 'PENDIENTE', '0000-00-00 00:00:00', '2025-02-10', '0000-00-00 00:00:00'),
+(49, 'T0000002', 34, '', 0, '', 'PENDIENTE', '0000-00-00 00:00:00', '2025-02-10', '0000-00-00 00:00:00'),
+(50, 'T0000002', 35, '', 0, '', 'PENDIENTE', '0000-00-00 00:00:00', '2025-02-10', '0000-00-00 00:00:00'),
+(51, 'T0000002', 36, '', 0, '', 'PENDIENTE', '0000-00-00 00:00:00', '2025-02-10', '0000-00-00 00:00:00'),
+(52, 'T0000002', 37, '', 0, '', 'PENDIENTE', '0000-00-00 00:00:00', '2025-02-10', '0000-00-00 00:00:00'),
+(53, 'T0000002', 38, '', 0, '', 'PENDIENTE', '0000-00-00 00:00:00', '2025-02-10', '0000-00-00 00:00:00'),
+(54, 'T0000002', 39, '', 0, '', 'PENDIENTE', '0000-00-00 00:00:00', '2025-02-10', '0000-00-00 00:00:00'),
+(55, 'T0000002', 40, '', 0, '', 'PENDIENTE', '0000-00-00 00:00:00', '2025-02-10', '0000-00-00 00:00:00'),
+(56, 'T0000002', 41, '', 0, '', 'PENDIENTE', '0000-00-00 00:00:00', '2025-02-10', '0000-00-00 00:00:00'),
+(57, 'T0000002', 42, '', 0, '', 'PENDIENTE', '0000-00-00 00:00:00', '2025-02-10', '0000-00-00 00:00:00'),
+(58, 'T0000002', 43, '', 0, '', 'PENDIENTE', '0000-00-00 00:00:00', '2025-02-10', '0000-00-00 00:00:00'),
+(59, 'T0000002', 44, '', 0, '', 'PENDIENTE', '0000-00-00 00:00:00', '2025-02-10', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -7159,28 +7148,22 @@ CREATE TABLE `docentes` (
   `id_asusuario` int(11) DEFAULT NULL,
   `created_at` date DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Volcado de datos para la tabla `docentes`
 --
 
 INSERT INTO `docentes` (`Id_docente`, `docente_dni`, `docente_nombre`, `docente_apelli`, `especialidad_id`, `docente_sexo`, `docente_fechanacimiento`, `docente_movil`, `docente_nro_alterno`, `docente_direccion`, `docente_estatus`, `docente_fotoperfil`, `id_asusuario`, `created_at`, `updated_at`) VALUES
-(1, '12354847', 'JULIAN', 'ALVAREZ', 1, 'MASCULINO', '1996-01-12', '926622626', '988777111', 'JR. CANADA N° 1874', 'ACTIVO', 'controller/docentes/fotos/IMG6-7-2024-15-856.jpg', 10, '2024-07-01', '2024-07-06 15:09:46'),
-(2, '15511565', 'YESSICA', 'SALAZAR PEÑA', 5, 'FEMENINO', '2000-12-12', '926626262', '985888777', 'JR. HUANCA N° 448', 'ACTIVO', 'controller/docentes/fotos/IMG6-7-2024-15-971.jpg', 13, '2024-07-01', '2024-07-06 15:08:38'),
-(3, '22355447', 'CELIA', 'MIRANDA', 3, 'FEMENINO', '1972-01-24', '988505521', NULL, 'JR NICOLAS DE PIEROLA N° 15', 'ACTIVO', 'controller/empleado/FOTOS/IMG29-8-2023-16-940.jpg', NULL, NULL, NULL),
-(4, '25665555', 'ELIAS', 'CARRIÓN', 4, 'MASCULINO', '1985-05-25', '935951872', NULL, 'AV 28 DE ABRIL N° 234', 'ACTIVO', 'controller/empleado/FOTOS/IMG10-9-2023-11-957.jpg', NULL, NULL, NULL),
-(5, '26544474', 'ANDREA', 'SANCHEZ', 2, 'FEMENINO', '1995-01-24', '966226262', NULL, 'AV. DIAZ BARCENAS N° 323', 'ACTIVO', 'controller/empleado/FOTOS/IMG28-8-2023-11-271.jpeg', NULL, NULL, NULL),
-(6, '26622626', 'JESUS', 'MONTAÑO TAYPE', 5, 'MASCULINO', '1990-01-15', '996262626', '933222111', 'AV. CANADA N° 477', 'ACTIVO', 'controller/docentes/fotos/IMG6-7-2024-15-272.jpg', 20, '2024-07-06', '2024-07-06 15:08:48'),
-(8, '55488555', 'JUAN CARLOS', 'MEDINA', 3, 'MASCULINO', '2000-07-25', '926161616', NULL, 'JR. CUSCO N° 323', 'ACTIVO', 'controller/empleado/FOTOS/usuario.png', NULL, NULL, NULL),
-(9, '55559744', 'LUIS', 'CAMACHO', 2, 'MASCULINO', '1998-01-24', '926622656', NULL, 'JR. HUANCAVELICA N° 323', 'ACTIVO', 'controller/empleado/FOTOS/usuario.png', NULL, NULL, NULL),
-(10, '56151515', 'JOAQUIN', 'PEÑA LOZANO', 5, 'FEMENINO', '1996-01-15', '959296262', '922654785', 'JR. PUNO N° 448', 'ACTIVO', 'controller/docentes/fotos/IMG1-10-2024-14-407.png', 19, '2024-07-06', '2024-07-06 15:08:59'),
-(11, '56525414', 'JORGE DANIEL', 'CAMPOS MALPARTIDA', 2, 'MASCULINO', '1998-01-01', '955888888', '952661488', 'JR. CANADA N', 'ACTIVO', 'controller/docentes/fotos/IMG4-7-2024-16-554.jpg', 11, '2024-07-01', '2024-07-06 09:40:53'),
-(12, '66262626', 'YENI', 'CHAVEZ LLANCAY', 3, 'FEMENINO', '1995-01-12', '959995929', '', 'AV. CIRCUNVALACIÓN', 'ACTIVO', 'controller/docentes/fotos/IMG4-7-2024-16-890.jpg', 12, '2024-07-01', '2024-07-04 16:33:37'),
-(13, '69855524', 'WILFREDO', 'CARRIÓN', 4, 'MASCULINO', '1995-05-11', '952541551', NULL, 'AV 28 DE ABRIL 235', 'ACTIVO', 'controller/empleado/FOTOS/IMG7-9-2023-18-768.jpg', NULL, NULL, NULL),
-(14, '72646121', 'JERSSON JORGE', 'CORILLA MIRANDA', 4, 'MASCULINO', '1996-03-15', '918654042', '', 'JR. NICOLAS DE PIEROLA Nº 105', 'ACTIVO', 'controller/docentes/fotos/IMG4-7-2024-16-429.jpg', 9, '2024-07-01', '2024-07-06 10:15:21'),
-(15, '26266226', 'CELIA', 'MIRANDA MUNGUIA', 2, 'FEMENINO', '1995-01-15', '926262626', '958777888', 'JR NICOLAS DE PIEROLA N° 477', 'INACTIVO', 'controller/docentes/fotos/IMG6-7-2024-15-616.jpg', 21, '2024-07-06', '2024-08-02 16:09:43'),
-(16, '59595959', 'VANESSA', 'CHAVEZ HUAMAN', 3, 'FEMENINO', '1990-01-15', '995995955', '995955959', 'JR. CUSCO N° 477', 'ACTIVO', 'controller/docentes/fotos/', 33, '2024-07-16', '0000-00-00 00:00:00');
+(14, '72646121', 'JORGE', 'CORDOVA MIRANDA', 4, 'MASCULINO', '1996-03-15', '918654042', '', 'JR. NICOLAS DE PIEROLA Nº 105', 'ACTIVO', 'controller/docentes/fotos/IMG21-1-2025-22-224.png', 9, '2024-07-01', '2025-01-22 09:21:56'),
+(17, '86752245', 'SILVIO', 'AZIMIR LIZARBE', 7, 'MASCULINO', '1989-10-12', '952462717', '', 'JR. CUBA 124', 'ACTIVO', 'controller/docentes/fotos/IMG21-1-2025-22-519.jpg', 60, '2025-01-21', '0000-00-00 00:00:00'),
+(18, '02736537', 'ELIAN', 'ARCE CAMACHO', 9, 'MASCULINO', '1991-03-05', '925352781', '', 'JR.CASIMIRO 34', 'ACTIVO', 'controller/docentes/fotos/IMG21-1-2025-22-819.jpg', 61, '2025-01-21', '0000-00-00 00:00:00'),
+(19, '93767910', 'JORGE ', 'DURAND LOPEZ', 12, 'MASCULINO', '1978-11-04', '926366328', '', 'JR. LAS GARDENIAS', 'ACTIVO', 'controller/docentes/fotos/IMG21-1-2025-22-695.jpg', 62, '2025-01-21', '0000-00-00 00:00:00'),
+(20, '56435234', 'ELIANA', 'CACERES CASTRO', 13, 'FEMENINO', '1987-05-03', '963552681', '', 'AV. LAS AMERICAS 345', 'ACTIVO', 'controller/docentes/fotos/IMG22-1-2025-9-716.gif', 90, '2025-01-22', '0000-00-00 00:00:00'),
+(21, '87353726', 'JULIA', 'HUAMAN BARRIENTOS', 10, 'FEMENINO', '1979-08-16', '942738192', '', 'AV. PANAMA 873', 'ACTIVO', 'controller/docentes/fotos/IMG22-1-2025-9-904.webp', 91, '2025-01-22', '0000-00-00 00:00:00'),
+(22, '67568723', 'NIKOLAS', 'SAAVEDRA ROMAN', 4, 'MASCULINO', '1987-04-17', '943567635', '', 'URB. MAUCACALLE A-2', 'ACTIVO', 'controller/docentes/fotos/IMG22-1-2025-9-840.png', 92, '2025-01-22', '0000-00-00 00:00:00'),
+(23, '54235445', 'DOROTEO', 'BORDA LOPEZ', 15, 'MASCULINO', '1967-12-08', '924544235', '', 'SEMINARIO MAYOR', 'ACTIVO', 'controller/docentes/fotos/IMG22-1-2025-10-183.jpg', 93, '2025-01-22', '0000-00-00 00:00:00'),
+(24, '24435783', 'JOSE', 'LUNA CASTELLAN', 7, 'MASCULINO', '1989-11-08', '929645736', '', 'JR.ATAHUAULLPA', 'ACTIVO', 'controller/docentes/fotos/IMG22-1-2025-13-23.jpg', 103, '2025-01-22', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -7202,15 +7185,6 @@ CREATE TABLE `egresos` (
   `updated` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `egresos`
---
-
-INSERT INTO `egresos` (`id_egresos`, `id_indicador`, `id_user`, `cantidad`, `monto`, `observacion`, `estado`, `motivo_anulacion`, `fecha_anulacion`, `created_at`, `updated`) VALUES
-(1, 2, 9, 2, 350.00, 'PAGO DE LA LUZ DE MES DE AGOSTO Y SETIEMBRE', 'VALIDO', NULL, NULL, '2024-10-08', '2024-10-08 00:00:00'),
-(2, 2, 9, 1, 180.00, NULL, 'VALIDO', NULL, NULL, '2024-10-07', NULL),
-(3, 3, 9, 1, 250.00, 'SE PAGO EL RECIBO DE AGUA', 'ANULADO', 'ANULADO POR MALA DIGITACIÓN', '2024-10-08', '2024-10-08', NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -7227,14 +7201,14 @@ CREATE TABLE `empresa` (
   `emp_logo` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Volcado de datos para la tabla `empresa`
 --
 
 INSERT INTO `empresa` (`empresa_id`, `emp_razon`, `emp_email`, `emp_cod`, `emp_telefono`, `emp_direccion`, `emp_logo`, `created_at`, `updated_at`) VALUES
-(1, 'SEDES SAPIENTIAE', 'CONTACTO@GMAIL.COM', '3434', '946 701 820', 'JR MAYTA CAPAC S/N ', 'controller/empresa/FOTOS/IMG22-11-2024-7-11.jpeg', NULL, NULL);
+(1, 'SEDES SAPIENTIAE', 'CONTACTO@SEDESSAPIENTIAEABANCAY.EDU.PE', '3434', '946 701 820', 'JR MAYTA CAPAC S/N ', 'controller/empresa/FOTOS/IMG22-11-2024-7-11.jpeg', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -7256,11 +7230,16 @@ CREATE TABLE `especialidad` (
 --
 
 INSERT INTO `especialidad` (`Id_especilidad`, `Especialidad`, `Descripcion`, `Estado`, `created_at`, `updated_at`) VALUES
-(1, 'MATEMATICO', 'DOCENTES EPECIALISTAS EN NUMEROS Y RM', 'ACTIVO', '2024-06-16 15:02:54', '2024-06-16 16:11:23'),
-(2, 'COMUNICACION', 'DOCENTES ESPECIALISTAS EN LETRAS', 'ACTIVO', '2024-06-16 15:28:03', '0000-00-00 00:00:00'),
-(3, 'QUIMICO', 'ESPCIALISTA EN TODO SOBRE QUIMICA', 'ACTIVO', '2024-06-16 15:30:01', '0000-00-00 00:00:00'),
 (4, 'FISICO', 'ESPECIALISTA EN FISICA Y NUMEROS', 'ACTIVO', '2024-06-16 15:30:45', '0000-00-00 00:00:00'),
-(5, 'DANZA', 'ESPECIALISTA EN DANZA Y MUSICA', 'ACTIVO', '2024-06-16 15:31:15', '0000-00-00 00:00:00');
+(7, 'MATEMATICA', 'ESPECIALISTA EN CIENCIAS MATEMATICAS', 'ACTIVO', '2025-01-21 21:46:55', '0000-00-00 00:00:00'),
+(8, 'CIENCIAS SOCIALES', 'ESPECIALISTA EN CIENCIAS SOCIALES', 'ACTIVO', '2025-01-21 21:49:12', '0000-00-00 00:00:00'),
+(9, 'EDUCACION FISICA', 'DOCENTE CON ESPECIALIDAD EN EDUCACION FISICA', 'ACTIVO', '2025-01-21 22:12:54', '0000-00-00 00:00:00'),
+(10, 'BIOLOGIA', 'DOCENTE CON ESPECIALIDAD EN CIENCIAS BIOLOGICAS', 'ACTIVO', '2025-01-21 22:13:58', '0000-00-00 00:00:00'),
+(11, 'ARTE', 'DOCENTE CON ESPECIALIDAD EN ARTES PLASTICAS', 'ACTIVO', '2025-01-21 22:14:50', '0000-00-00 00:00:00'),
+(12, 'LENGUAJE', 'DOCENTE CON ESPECIALIDAD EN LENGUAJE Y LITERATURA', 'ACTIVO', '2025-01-21 22:15:26', '0000-00-00 00:00:00'),
+(13, 'INGLES', 'DOCENTE ESPECIALISTA EN IDIOMA EXTRANJERO', 'ACTIVO', '2025-01-21 22:16:22', '0000-00-00 00:00:00'),
+(14, 'CTA', 'ESPECIALISTA EN CIENCIA TECNOLOGIA Y AMBIENTE', 'ACTIVO', '2025-01-21 22:17:08', '0000-00-00 00:00:00'),
+(15, 'RELIGION', 'ESPECIALISTA EN EDUCACION RELIGIOSA', 'ACTIVO', '2025-01-22 09:59:15', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -7285,14 +7264,8 @@ CREATE TABLE `examen` (
 --
 
 INSERT INTO `examen` (`id_examen`, `id_detalle_asignatura`, `tema_examen`, `descripcion`, `fecha_examen`, `estado`, `created_at`, `updated_at`, `doc_ncorrelativo`) VALUES
-('E0000001', 20, 'CALIGRAFIA', 'SE REALIZARA EL EXAMEN EN BASE 20', '2024-08-14 17:38:46', 'REALIZADO', '2024-08-11', '2024-08-11 13:09:04', 1),
-('E0000002', 22, 'SUMA Y RESTA', 'SE REALIZARA EL EXAMEN EN 1 HORA', '2024-08-11 12:17:43', 'REALIZADO', '2024-08-11', '0000-00-00 00:00:00', 2),
-('E0000003', 24, 'ORTOGRAFÍA', 'SE DESARROLLARA EL EXAMEN PRACTICAR', '2024-08-16 11:00:00', 'REALIZADO', '2024-08-11', '0000-00-00 00:00:00', 3),
-('E0000004', 45, 'CUERPO HUMANO', 'ESTUDIAR', '2024-09-20 15:31:50', 'REALIZADO', '2024-09-16', '0000-00-00 00:00:00', 4),
-('E0000005', 44, 'SOCIEDAD CIVIL', '', '2024-10-10 16:03:58', 'REALIZADO', '2024-10-10', '0000-00-00 00:00:00', 5),
-('E0000006', 21, 'EL MEDIO AMBIENTE', '', '2024-10-10 16:08:00', 'REALIZADO', '2024-10-10', '0000-00-00 00:00:00', 6),
-('E0000007', 64, 'ECUACIONES', 'ESTUDIAR LA 3RA UNIDAD PARA EL EXAMEN DE ECUACIONES', '2024-10-12 10:00:00', 'REALIZADO', '2024-10-12', '2024-10-12 11:15:40', 7),
-('E0000008', 64, 'ECUACIONES', 'ESTUDIAR PARA EL EXAMEN', '2024-10-23 11:19:15', 'PENDIENTE', '2024-10-12', '0000-00-00 00:00:00', 8);
+('D0000001', 87, 'EXAMEN ESCRITO EN AULA', '', '2025-01-25 11:09:18', 'PENDIENTE', '2025-01-22', '0000-00-00 00:00:00', 1),
+('E0000002', 87, 'LOS MANDAMIENTOS', 'NO OLVIDAR DEL EXAMEN', '2025-02-21 09:41:30', 'PENDIENTE', '2025-02-20', '0000-00-00 00:00:00', 2);
 
 -- --------------------------------------------------------
 
@@ -7315,72 +7288,36 @@ CREATE TABLE `horarios` (
 --
 
 INSERT INTO `horarios` (`id_horario`, `id_hora_aula`, `id_detalle_asig_docente`, `dia`, `estado`, `created_at`, `updated_at`) VALUES
-(5, 24, 44, 'LUNES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(6, 25, 44, 'LUNES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(7, 26, 48, 'LUNES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(8, 27, 48, 'LUNES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(9, 28, 62, 'LUNES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(10, 29, 50, 'LUNES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(11, 30, 50, 'LUNES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(12, 31, 50, 'LUNES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(13, 32, 62, 'LUNES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(14, 33, 58, 'LUNES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(15, 34, 58, 'LUNES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(16, 24, 45, 'MARTES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(17, 25, 45, 'MARTES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(18, 26, 49, 'MARTES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(19, 27, 49, 'MARTES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(20, 28, 62, 'MARTES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(21, 29, 52, 'MARTES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(22, 30, 52, 'MARTES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(23, 31, 55, 'MARTES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(24, 32, 62, 'MARTES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(25, 33, 59, 'MARTES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(26, 34, 59, 'MARTES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(27, 24, 46, 'MIERCOLES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(28, 25, 46, 'MIERCOLES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(29, 26, 50, 'MIERCOLES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(30, 27, 50, 'MIERCOLES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(31, 28, 62, 'MIERCOLES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(32, 29, 53, 'MIERCOLES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(33, 30, 53, 'MIERCOLES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(34, 31, 56, 'MIERCOLES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(35, 32, 62, 'MIERCOLES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(36, 33, 56, 'MIERCOLES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(37, 34, 56, 'MIERCOLES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(38, 24, 44, 'JUEVES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(39, 25, 44, 'JUEVES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(40, 26, 50, 'JUEVES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(41, 27, 50, 'JUEVES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(42, 28, 62, 'JUEVES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(43, 29, 53, 'JUEVES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(44, 30, 53, 'JUEVES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(45, 31, 54, 'JUEVES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(46, 32, 62, 'JUEVES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(47, 33, 60, 'JUEVES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(48, 34, 60, 'JUEVES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(49, 24, 47, 'VIERNES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(50, 25, 47, 'VIERNES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(51, 26, 51, 'VIERNES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(52, 27, 51, 'VIERNES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(53, 28, 62, 'VIERNES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(54, 29, 54, 'VIERNES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(55, 30, 57, 'VIERNES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(56, 31, 57, 'VIERNES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(57, 32, 62, 'VIERNES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(58, 33, 61, 'VIERNES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(59, 34, 61, 'VIERNES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(60, 3, 20, 'LUNES', 'ACTIVO', '2024-09-08', '0000-00-00 00:00:00'),
-(61, 11, 20, 'LUNES', 'ACTIVO', '2024-09-08', '0000-00-00 00:00:00'),
-(63, 12, 23, 'LUNES', 'ACTIVO', '2024-09-08', '0000-00-00 00:00:00'),
-(64, 35, 23, 'LUNES', 'ACTIVO', '2024-09-08', '0000-00-00 00:00:00'),
-(65, 3, 20, 'MARTES', 'ACTIVO', '2024-09-08', '0000-00-00 00:00:00'),
-(66, 11, 20, 'MARTES', 'ACTIVO', '2024-09-08', '0000-00-00 00:00:00'),
-(67, 24, 44, 'LUNES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(68, 25, 44, 'LUNES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(69, 26, 48, 'LUNES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(70, 27, 48, 'LUNES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(71, 28, 62, 'LUNES', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00');
+(72, 50, 74, 'LUNES', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(73, 51, 74, 'LUNES', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(74, 41, 75, 'VIERNES', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(75, 42, 75, 'VIERNES', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(76, 50, 77, 'VIERNES', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(77, 51, 77, 'VIERNES', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(78, 46, 78, 'LUNES', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(79, 47, 78, 'LUNES', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(80, 48, 78, 'LUNES', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(81, 48, 79, 'MIERCOLES', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(82, 50, 79, 'MIERCOLES', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(83, 51, 79, 'MIERCOLES', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(84, 41, 80, 'MARTES', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(85, 42, 80, 'MARTES', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(86, 41, 81, 'MIERCOLES', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(87, 42, 81, 'MIERCOLES', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(88, 43, 78, 'MIERCOLES', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(89, 44, 78, 'MIERCOLES', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(90, 43, 82, 'VIERNES', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(91, 44, 82, 'VIERNES', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(92, 50, 83, 'VIERNES', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(93, 51, 83, 'VIERNES', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(94, 48, 85, 'MARTES', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(95, 48, 86, 'MARTES', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(96, 43, 85, 'LUNES', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(97, 44, 85, 'LUNES', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(98, 48, 87, 'JUEVES', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(99, 46, 87, 'VIERNES', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(100, 47, 88, 'VIERNES', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(101, 48, 88, 'VIERNES', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -7405,29 +7342,17 @@ CREATE TABLE `horas_aula` (
 --
 
 INSERT INTO `horas_aula` (`id_hora`, `id_año_academico`, `id_aula`, `turno`, `hora_inicio`, `hora_fin`, `estado`, `created_at`, `updated_at`) VALUES
-(3, 2, 5, 'MAÑANA', '08:00:00', '08:45:00', 'ACTIVO', '2024-09-03', '0000-00-00 00:00:00'),
-(7, 2, 6, 'MAÑANA', '08:00:00', '08:45:00', 'ACTIVO', '2024-09-03', '0000-00-00 00:00:00'),
-(8, 2, 6, 'MAÑANA', '08:45:00', '09:30:00', 'ACTIVO', '2024-09-03', '0000-00-00 00:00:00'),
-(11, 2, 5, 'MAÑANA', '08:45:00', '09:30:00', 'ACTIVO', '2024-09-03', '0000-00-00 00:00:00'),
-(12, 2, 5, 'MAÑANA', '09:30:00', '10:20:00', 'ACTIVO', '2024-09-03', '0000-00-00 00:00:00'),
-(23, 2, 18, 'MAÑANA', '07:45:00', '08:00:00', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(24, 2, 18, 'MAÑANA', '08:00:00', '08:40:00', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(25, 2, 18, 'MAÑANA', '08:40:00', '09:20:00', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(26, 2, 18, 'MAÑANA', '09:20:00', '10:00:00', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(27, 2, 18, 'MAÑANA', '10:00:00', '10:40:00', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(28, 2, 18, 'MAÑANA', '10:40:00', '11:05:00', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(29, 2, 18, 'MAÑANA', '11:05:00', '11:45:00', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(30, 2, 18, 'MAÑANA', '11:45:00', '12:25:00', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(31, 2, 18, 'MAÑANA', '12:25:00', '13:05:00', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(32, 2, 18, 'MAÑANA', '13:05:00', '13:35:00', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(33, 2, 18, 'MAÑANA', '13:35:00', '14:15:00', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(34, 2, 18, 'MAÑANA', '14:15:00', '14:55:00', 'ACTIVO', '2024-09-04', '0000-00-00 00:00:00'),
-(35, 2, 5, 'MAÑANA', '10:20:00', '11:05:00', 'ACTIVO', '2024-09-08', '0000-00-00 00:00:00'),
-(36, 2, 5, 'MAÑANA', '11:05:00', '11:45:00', 'ACTIVO', '2024-09-08', '0000-00-00 00:00:00'),
-(37, 2, 5, 'MAÑANA', '11:45:00', '12:30:00', 'ACTIVO', '2024-09-08', '0000-00-00 00:00:00'),
-(38, 2, 9, 'MAÑANA', '07:45:00', '08:00:00', 'ACTIVO', '2024-09-16', '0000-00-00 00:00:00'),
-(39, 2, 9, 'MAÑANA', '08:00:00', '08:40:00', 'ACTIVO', '2024-09-16', '0000-00-00 00:00:00'),
-(40, 1, 5, 'MAÑANA', '08:00:00', '08:40:00', 'ACTIVO', '2024-09-21', '0000-00-00 00:00:00');
+(41, 5, 22, 'MAÑANA', '08:00:00', '08:40:00', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(42, 5, 22, 'MAÑANA', '08:40:00', '09:20:00', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(43, 5, 22, 'MAÑANA', '09:20:00', '10:00:00', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(44, 5, 22, 'MAÑANA', '10:00:00', '10:40:00', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(45, 5, 22, 'MAÑANA', '10:40:00', '11:05:00', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(46, 5, 22, 'MAÑANA', '11:05:00', '11:45:00', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(47, 5, 22, 'MAÑANA', '11:45:00', '12:25:00', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(48, 5, 22, 'MAÑANA', '12:25:00', '13:05:00', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(49, 5, 22, 'MAÑANA', '13:05:00', '13:35:00', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(50, 5, 22, 'MAÑANA', '13:35:00', '14:15:00', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00'),
+(51, 5, 22, 'MAÑANA', '14:15:00', '14:55:00', 'ACTIVO', '2025-01-22', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -7450,10 +7375,7 @@ CREATE TABLE `indicadores` (
 --
 
 INSERT INTO `indicadores` (`id_indicadores`, `tipo_indicador`, `nombre`, `descripcion`, `estado`, `created_at`, `updated_at`) VALUES
-(1, 'INGRESOS', 'PENSIONES  Y OTROS', 'INGRESOS POR MARTE DE LOS ESTUDIANTES', 'ACTIVO', '2024-10-07', '0000-00-00 00:00:00'),
-(2, 'GASTOS', 'PAGO DE LA LUZ', 'SERVICIO QUE SE PAGA CADA MES', 'ACTIVO', '2024-10-06', '0000-00-00 00:00:00'),
-(3, 'GASTOS', 'PAGO DE RECIBO AGUA', 'ESTE INDICADOR ES UN SERVICIO', 'ACTIVO', '2024-10-06', '2024-10-06 12:12:41'),
-(4, 'INGRESOS', 'VENTA DE UNIFORMES', 'ESTO ES UN INGRESO POR VENTA DE UNIFORMES', 'ACTIVO', '2024-10-06', '0000-00-00 00:00:00');
+(1, 'INGRESOS', 'PENSION Y OTROS', '', 'ACTIVO', '2025-01-23', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -7481,18 +7403,10 @@ CREATE TABLE `ingresos` (
 --
 
 INSERT INTO `ingresos` (`id_ingreso`, `id_pago_pension`, `id_indicador`, `id_user`, `cantidad`, `monto`, `observacion`, `estado`, `motivo_anulacion`, `fecha_anulacion`, `created_at`, `updated`) VALUES
-(1, NULL, 4, 9, 2, 420.00, '', 'VALIDO', NULL, NULL, '2024-10-07', NULL),
-(2, NULL, 4, 9, 2, 420.00, '', 'VALIDO', NULL, NULL, '2024-10-07', NULL),
-(3, NULL, 4, 9, 2, 400.00, '', 'ANULADO', 'ANULADO POR ERROR DE DIGITACIóN', '2024-10-08', '2024-10-08', '2024-10-08 00:00:00'),
-(8, NULL, 4, 9, 2, 420.00, '', 'VALIDO', NULL, NULL, '2024-10-08', NULL),
-(15, NULL, 4, 9, 1, 250.00, '', 'VALIDO', NULL, NULL, '2024-10-08', NULL),
-(18, 92, 1, 9, 1, 250.00, 'PENSION', 'VALIDO', '', '0000-00-00', '2024-10-10', '0000-00-00 00:00:00'),
-(19, 93, 1, 9, 1, 250.00, 'PENSION', 'VALIDO', '', '0000-00-00', '2024-10-10', '0000-00-00 00:00:00'),
-(20, 94, 1, 9, 1, 250.00, 'PENSION', 'VALIDO', '', '0000-00-00', '2024-10-10', '0000-00-00 00:00:00'),
-(21, 95, 1, 9, 1, 250.00, 'PENSION', 'VALIDO', '', '0000-00-00', '2024-10-10', '0000-00-00 00:00:00'),
-(22, 96, 1, 9, 1, 250.00, 'PENSION', 'VALIDO', '', '0000-00-00', '2024-10-12', '0000-00-00 00:00:00'),
-(23, 97, 1, 9, 1, 250.00, 'PENSION', 'VALIDO', '', '0000-00-00', '2024-10-12', '0000-00-00 00:00:00'),
-(24, 98, 1, 9, 1, 250.00, 'PENSION', 'VALIDO', '', '0000-00-00', '2024-10-12', '0000-00-00 00:00:00');
+(76, 152, 1, 9, 1, 250.00, 'PENSION', 'VALIDO', '', '0000-00-00', '2025-01-23', '0000-00-00 00:00:00'),
+(77, 155, 1, 9, 1, 100.00, 'ADMISION', 'VALIDO', '', '0000-00-00', '2025-01-23', '0000-00-00 00:00:00'),
+(78, 155, 1, 9, 1, 100.00, 'ALUMNO NUEVO', 'VALIDO', '', '0000-00-00', '2025-01-23', '0000-00-00 00:00:00'),
+(79, 155, 1, 9, 1, 250.00, 'MATRICULA', 'VALIDO', '', '0000-00-00', '2025-01-23', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -7521,12 +7435,20 @@ CREATE TABLE `matricula` (
 --
 
 INSERT INTO `matricula` (`id_matricula`, `id_alumno`, `id_año`, `id_aula`, `pago_admi`, `pago_alu_nuevo`, `pago_matricula`, `procedencia_colegio`, `provincia`, `departamento`, `usu_id`, `created_at`, `updated_at`) VALUES
-(1, 1, 2, 5, 0.00, 0.00, 160.00, 'AURORA', 'ABANCAY', 'APURìMAC', 34, '2024-07-16', '2024-07-22 16:09:08'),
-(8, 3, 2, 6, 0.00, 0.00, 160.00, '', '', '', 48, '2024-07-20', '2024-07-22 16:11:18'),
-(14, 2, 2, 5, NULL, NULL, 160.00, '', '', '', 47, '2024-07-20', '2024-07-20 10:56:48'),
-(25, 4, 2, 5, 100.00, 250.00, 160.00, 'ROSARIO', 'ABANCAY', 'APURIMAC', 49, '2024-07-20', '2024-07-22 16:26:41'),
-(27, 5, 2, 6, 250.00, 100.00, 160.00, '', '', '', 51, '2024-08-03', '2024-08-03 11:55:40'),
-(29, 7, 2, 15, 100.00, 50.00, 250.00, 'MIGUEL GRAU', 'ABANCAY', 'APURIMAC', 53, '2024-09-10', '2024-09-10 14:32:12');
+(32, 10, 5, 22, 100.00, 100.00, 250.00, 'MIGUEL GRAU', 'ABANCAY', 'APURIMAC', 86, '2025-01-22', '2025-01-22 06:35:40'),
+(33, 25, 5, 22, 100.00, 100.00, 250.00, 'SOLANO', 'ABANCAY', 'APURIMAC', 87, '2025-01-22', '2025-01-22 21:11:25'),
+(34, 26, 5, 22, 100.00, 100.00, 250.00, 'MIGUEL GRAU', 'ABANCAY', 'APURIMAC', 88, '2025-01-22', '2025-01-22 08:53:11'),
+(35, 27, 5, 22, 100.00, 100.00, 250.00, 'SOLANO', 'ABANCAY', 'APURIMAC', 89, '2025-01-22', '2025-01-22 08:54:50'),
+(36, 11, 5, 22, 100.00, 100.00, 250.00, 'PITAGORAS', 'ABANCAY', 'APURIMAC', 94, '2025-01-22', '2025-01-22 12:46:23'),
+(37, 13, 5, 22, 100.00, 100.00, 250.00, 'JOSE MARIA ARGUEDAS', 'ABANCAY', 'APURIMAC', 95, '2025-01-22', '2025-01-22 12:47:56'),
+(38, 24, 5, 22, 100.00, 100.00, 250.00, 'PUEBLO JOVEN', 'ABANCAY', 'APURIMAC', 96, '2025-01-22', '2025-01-22 16:39:05'),
+(39, 17, 5, 22, 100.00, 100.00, 250.00, 'FRAY ARMANDO', 'ABANCAY', 'APURIMAC', 97, '2025-01-22', '2025-01-22 16:40:17'),
+(40, 12, 5, 22, 100.00, 100.00, 250.00, 'FRANCISCO BOLOGNESI', 'ABANCAY', 'APURIMAC', 98, '2025-01-22', '2025-01-22 16:39:12'),
+(41, 21, 5, 22, 100.00, 100.00, 250.00, 'GALILEO CUSCO', 'CUSCO', 'CUSCO', 99, '2025-01-22', '2025-01-22 16:40:09'),
+(42, 15, 5, 22, 100.00, 100.00, 250.00, 'SOLANO', 'ABANCAY', 'APURIMAC', 100, '2025-01-22', '2025-01-22 16:39:22'),
+(43, 23, 5, 22, 100.00, 100.00, 250.00, 'PEDRO KALBER MATTER', 'ABANCAY', 'APURIMAC', 101, '2025-01-22', '2025-01-22 16:39:52'),
+(44, 19, 5, 22, 100.00, 100.00, 250.00, 'INDUSTRIAL', 'ABANCAY', 'APURIMAC', 102, '2025-01-22', '2025-01-22 16:39:31'),
+(45, 14, 5, 20, 100.00, 100.00, 250.00, 'SOLANO', '', '', 104, '2025-01-23', '2025-01-23 15:40:54');
 
 -- --------------------------------------------------------
 
@@ -7548,10 +7470,10 @@ CREATE TABLE `nivel_academico` (
 --
 
 INSERT INTO `nivel_academico` (`Id_nivel`, `Nivel_academico`, `descripcion`, `estado`, `create_at`, `updated_at`) VALUES
-(1, 'INICIAL', 'PARA NIÑOS DE 3 A 5 AÑOS SOLO 3 GRADOS', 'ACTIVO', '2024-06-17 14:56:38', '2024-06-23 10:24:55'),
-(2, 'PRIMARIA', 'CONSTA DE 6 GRADOS ACADEMICO Y ESTA CONSTITUIDO POR ALUMNOS DESDE LOS 6 HASTA LOS 11 AÑOS', 'ACTIVO', '2024-06-17 15:11:26', '2024-06-17 15:34:50'),
-(3, 'SECUNDARIA', 'CONSTA DE 5 NIVELES DE GRADO Y SON PARA ALUMNOS QUE ESTAN EN LA ETAPA DE LA PUBERTAD Y DESARROLLO DE 12 A 16 AÑOS', 'ACTIVO', '2024-06-17 15:12:08', '0000-00-00 00:00:00'),
-(5, 'TODOS', 'GENERAL', 'ACTIVO', '2024-07-20 10:50:19', NULL);
+(1, 'INICIAL', 'PARA NIÑOS DE 3 A 5 AÑOS SOLO 3 GRADOS', 'ACTIVO', '2025-01-01 13:56:38', NULL),
+(2, 'PRIMARIA', 'CONSTA DE 6 GRADOS ACADEMICO Y ESTA CONSTITUIDO POR ALUMNOS DESDE LOS 6 HASTA LOS 11 AÑOS', 'ACTIVO', '2025-01-01 14:11:26', NULL),
+(3, 'SECUNDARIA', 'CONSTA DE 5 NIVELES DE GRADO Y SON PARA ALUMNOS QUE ESTAN EN LA ETAPA DE LA PUBERTAD Y DESARROLLO DE 12 A 16 AÑOS', 'ACTIVO', '2025-01-01 15:12:08', NULL),
+(5, 'TODOS', 'GENERAL', 'ACTIVO', '2025-01-01 16:50:19', NULL);
 
 -- --------------------------------------------------------
 
@@ -7575,71 +7497,8 @@ CREATE TABLE `notas` (
 --
 
 INSERT INTO `notas` (`id_nota_bole`, `id_matricula`, `id_bimestre`, `id_criterio`, `nota`, `conclusiones`, `creared_at`, `updated_at`) VALUES
-(127, 1, 14, 1, 'AD/19', '', NULL, '2024-09-16 15:30:12'),
-(128, 1, 14, 8, 'AD/20', '', NULL, '2024-09-16 15:30:12'),
-(129, 1, 14, 18, 'AD/20', '', NULL, '2024-09-16 15:30:12'),
-(130, 1, 14, 19, '12.00', '', NULL, '2024-09-16 15:30:12'),
-(131, 1, 14, 20, '11.00', '', NULL, '2024-09-16 15:30:12'),
-(132, 1, 14, 21, '12.00', '', NULL, '2024-09-16 15:30:12'),
-(133, 14, 14, 1, '15.00', '', NULL, '2024-09-01 18:01:27'),
-(134, 14, 14, 8, '15.00', '', NULL, '2024-09-01 18:01:27'),
-(135, 14, 14, 18, '15.00', '', NULL, '2024-09-01 18:01:27'),
-(136, 14, 14, 19, '15.00', '', NULL, '2024-09-01 18:01:27'),
-(137, 14, 14, 20, '15.00', 'DFGFD', NULL, '2024-09-01 18:01:27'),
-(138, 14, 14, 21, '15.00', '', NULL, '2024-09-01 18:01:27'),
-(145, 25, 14, 1, 'A/15', '', NULL, NULL),
-(146, 25, 14, 8, 'A/16', '', NULL, NULL),
-(147, 25, 14, 18, 'A/15', '', NULL, NULL),
-(148, 25, 14, 19, 'A/15', '', NULL, NULL),
-(149, 25, 14, 20, 'A/15', '', NULL, NULL),
-(150, 25, 14, 21, 'A/15', '', NULL, NULL),
-(151, 1, 13, 1, 'AD/20', '', NULL, '2024-09-01 18:25:33'),
-(152, 1, 13, 8, 'AD/20', '', NULL, '2024-09-01 18:25:33'),
-(153, 1, 13, 18, 'AD/20', '', NULL, '2024-09-01 18:25:33'),
-(154, 1, 13, 19, '12.00', '', NULL, '2024-09-01 18:25:33'),
-(155, 1, 13, 20, '11.00', '', NULL, '2024-09-01 18:25:33'),
-(156, 1, 13, 21, '12.00', '', NULL, '2024-09-01 18:25:33'),
-(194, 29, 14, 36, '12/A', '', '2024-09-20', NULL),
-(195, 29, 14, 37, '15/A', '', '2024-09-20', NULL),
-(196, 29, 14, 38, '15/A', '', '2024-09-20', NULL),
-(197, 29, 14, 39, '15/A', '', '2024-09-20', NULL),
-(198, 29, 14, 40, '15/A', '', '2024-09-20', NULL),
-(199, 29, 14, 41, '15/A', '', '2024-09-20', NULL),
-(200, 29, 14, 29, '12/A', '', '2024-09-20', NULL),
-(201, 29, 14, 30, '13/A', '', '2024-09-20', NULL),
-(202, 29, 14, 31, '15/A', '', '2024-09-20', NULL),
-(203, 29, 14, 32, '15/A', '', '2024-09-20', NULL),
-(204, 29, 14, 33, '15/A', '', '2024-09-20', NULL),
-(205, 29, 14, 34, '15/A', '', '2024-09-20', NULL),
-(206, 29, 14, 35, '15/A', '', '2024-09-20', NULL),
-(207, 29, 13, 36, '12/A', '', '2024-09-20', NULL),
-(208, 29, 13, 37, '15/A', '', '2024-09-20', NULL),
-(209, 29, 13, 38, '15/A', '', '2024-09-20', NULL),
-(210, 29, 13, 39, '15/A', '', '2024-09-20', NULL),
-(211, 29, 13, 40, '15/A', '', '2024-09-20', NULL),
-(212, 29, 13, 41, '15/A', '', '2024-09-20', NULL),
-(213, 29, 13, 29, '12/A', '', '2024-09-20', NULL),
-(214, 29, 13, 30, '13/A', '', '2024-09-20', NULL),
-(215, 29, 13, 31, '15/A', '', '2024-09-20', NULL),
-(216, 29, 13, 32, '15/A', '', '2024-09-20', NULL),
-(217, 29, 13, 33, '15/A', '', '2024-09-20', NULL),
-(218, 29, 13, 34, '15/A', '', '2024-09-20', NULL),
-(219, 29, 13, 35, '15/A', '', '2024-09-20', NULL),
-(220, 29, 12, 36, '12/A', '', '2024-09-20', NULL),
-(221, 29, 12, 37, '15/A', '', '2024-09-20', NULL),
-(222, 29, 12, 38, '15/A', '', '2024-09-20', NULL),
-(223, 29, 12, 39, '15/A', '', '2024-09-20', NULL),
-(224, 29, 12, 40, '15/A', '', '2024-09-20', NULL),
-(225, 29, 12, 41, '15/A', '', '2024-09-20', NULL),
-(226, 29, 12, 29, '12/A', '', '2024-09-20', NULL),
-(227, 29, 12, 30, '13/A', '', '2024-09-20', NULL),
-(228, 29, 12, 31, '15/A', '', '2024-09-20', NULL),
-(229, 29, 12, 32, '15/A', '', '2024-09-20', NULL),
-(230, 29, 12, 33, '15/A', '', '2024-09-20', NULL),
-(231, 29, 12, 34, '15/A', '', '2024-09-20', NULL),
-(232, 29, 12, 35, '15/A', '', '2024-09-20', NULL),
-(233, 27, 39, 28, '12', '', '2024-10-10', NULL),
-(234, 8, 39, 28, '15', 'DSD', '2024-10-10', NULL);
+(235, 32, 47, 53, '15', '', '2025-02-10', NULL),
+(236, 32, 47, 54, '19', '', '2025-02-10', NULL);
 
 -- --------------------------------------------------------
 
@@ -7656,36 +7515,6 @@ CREATE TABLE `notas_padre` (
   `creared_at` date DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `notas_padre`
---
-
-INSERT INTO `notas_padre` (`id_nota_papa`, `id_matricula`, `id_bimestre`, `criterio`, `nota`, `creared_at`, `updated_at`) VALUES
-(123, 1, 14, 'Asiste y participa activamente en actividades y reuniones del Aula', 'A', '2024-08-30', '2024-09-16 15:30:12'),
-(124, 1, 14, 'Acude regularmente al colegio en el horario de atencion a padres de familia, para dialogar con los docentes sobre el rendimiento academico y la conducta de su hijo. (a)', 'A', '2024-08-30', '2024-09-16 15:30:12'),
-(125, 1, 14, 'Cumple con las cuotas de pension.', 'A', '2024-08-30', '2024-09-16 15:30:12'),
-(126, 14, 14, 'Asiste y participa activamente en actividades y reuniones del Aula', 'A', '2024-08-30', '2024-08-30 15:57:42'),
-(127, 14, 14, 'Acude regularmente al colegio en el horario de atencion a padres de familia, para dialogar con los docentes sobre el rendimiento academico y la conducta de su hijo. (a)', 'A', '2024-08-30', '2024-08-30 15:57:42'),
-(128, 14, 14, 'Cumple con las cuotas de pension.', 'A', '2024-08-30', '2024-08-30 15:57:42'),
-(147, 25, 14, 'Asiste y participa activamente en actividades y reuniones del Aula', 'A', '2024-09-01', '2024-09-01 18:28:44'),
-(148, 25, 14, 'Acude regularmente al colegio en el horario de atencion a padres de familia, para dialogar con los docentes sobre el rendimiento academico y la conducta de su hijo. (a)', 'A', '2024-09-01', '2024-09-01 18:28:44'),
-(149, 25, 14, 'Cumple con las cuotas de pension.', 'A', '2024-09-01', '2024-09-01 18:28:44'),
-(150, 1, 13, 'Asiste y participa activamente en actividades y reuniones del Aula', 'A', '2024-08-30', '2024-09-01 18:25:33'),
-(151, 1, 13, 'Acude regularmente al colegio en el horario de atencion a padres de familia, para dialogar con los docentes sobre el rendimiento academico y la conducta de su hijo. (a)', 'A', '2024-08-30', '2024-09-01 18:25:33'),
-(152, 1, 13, 'Cumple con las cuotas de pension.', 'A', '2024-08-30', '2024-09-01 18:25:33'),
-(153, 29, 12, 'Asiste y participa activamente en actividades y reuniones del Aula', 'A', '2024-08-30', '2024-09-01 18:25:33'),
-(154, 29, 12, 'Acude regularmente al colegio en el horario de atencion a padres de familia, para dialogar con los docentes sobre el rendimiento academico y la conducta de su hijo. (a)', 'A', '2024-08-30', '2024-09-01 18:25:33'),
-(155, 29, 12, 'Cumple con las cuotas de pension.', 'A', '2024-08-30', '2024-09-01 18:25:33'),
-(156, 29, 13, 'Asiste y participa activamente en actividades y reuniones del Aula', 'B', '2024-08-30', '2024-09-01 18:25:33'),
-(157, 29, 13, 'Acude regularmente al colegio en el horario de atencion a padres de familia, para dialogar con los docentes sobre el rendimiento academico y la conducta de su hijo. (a)', 'B', '2024-08-30', '2024-09-01 18:25:33'),
-(158, 29, 13, 'Cumple con las cuotas de pension.', 'A', '2024-08-30', '2024-09-01 18:25:33'),
-(159, 29, 14, 'Asiste y participa activamente en actividades y reuniones del Aula', 'B', '2024-08-30', '2024-09-01 18:25:33'),
-(160, 29, 14, 'Acude regularmente al colegio en el horario de atencion a padres de familia, para dialogar con los docentes sobre el rendimiento academico y la conducta de su hijo. (a)', 'A', '2024-08-30', '2024-09-01 18:25:33'),
-(161, 29, 14, 'Cumple con las cuotas de pension.', 'A', '2024-08-30', '2024-09-01 18:25:33'),
-(162, 8, 39, 'Asiste y participa activamente en actividades y reuniones del Aula', 'A', '2024-10-10', '2024-10-10 15:48:13'),
-(163, 8, 39, 'Acude regularmente al colegio en el horario de atencion a padres de familia, para dialogar con los docentes sobre el rendimiento academico y la conducta de su hijo. (a)', 'A', '2024-10-10', '2024-10-10 15:48:13'),
-(164, 8, 39, 'Cumple con las cuotas de pension.', 'A', '2024-10-10', '2024-10-10 15:48:13');
 
 -- --------------------------------------------------------
 
@@ -7711,9 +7540,25 @@ CREATE TABLE `padres` (
 --
 
 INSERT INTO `padres` (`id_papas`, `id_alu`, `Dni_papa`, `Datos_papa`, `Celular_papa`, `Dni_mama`, `Datos_mama`, `Celular_mama`, `created_at`, `updated_at`) VALUES
-(6, 6, '66262162', 'CARLOS CAMACHO PERALES', '995259229', '84844848', 'ANDREA PERALTA CHAVEZ', '926626262', '2024-09-10', '0000-00-00 00:00:00'),
-(7, 7, '', '', '', '48484848', 'YESSICA DAVILA PACHECO', '926622626', '2024-09-10', '2024-09-11 16:52:11'),
-(8, 8, '82858844', 'JORGE CHAVEZ FANOLA', '922962626', '15511515', 'ANDREA PEREZ CAHUANA', '926626262', '2024-10-08', '0000-00-00 00:00:00');
+(10, 10, '42753244', 'AGRADA VALLE ALEJANDRO', '987567874', '45635422', 'SEQUEIROS DOMIENGUEZ SADITH', '943126543', '2024-12-04', '2025-01-21 22:35:48'),
+(11, 11, '46046435', 'JAMES ENRIQUE ARANDO ARTEAGA', '930778280', '31456713', 'ROSALINDA CAMACHO RODRIGUES', '901800860', '2024-12-04', '2025-01-21 22:36:10'),
+(12, 12, '31020284', 'MIGUEL BARRIOS PATIÑO', '940312596', '31033784', 'PAOLA CCAHUANA DIAS', '951227488', '2024-12-04', '2025-01-21 22:37:19'),
+(13, 13, '29423448', 'JOSE PATRICIO BECERRA RODRIGUEZ', '968048668', '25000808', 'MARCIA GARCIA RIVERO', '968043105', '2024-12-04', '2025-01-21 22:37:37'),
+(14, 14, '31246578', 'SAUL ALEX CAMACHO SALCEDO', '983611646', '40716682', 'JANETH VILLAFUERTE BARRIOS', '958712659', '2024-12-04', '2025-01-21 22:38:49'),
+(15, 15, '31185336', 'EFRAIN CHACON GRAJEDA', '938213456', '31020605', 'ALICIA YSABEL ESCALANTE PALOMINO', '994789204', '2024-12-04', '2025-01-21 22:39:22'),
+(16, 16, '43341400', 'JOSE RUBEN CHALCO SAIRETUPA', '927021326', '41665060', 'EMILIA MENDOZA CCOICOSI', '946696804', '2024-12-04', '2025-01-21 22:39:42'),
+(17, 17, '10071791', 'LUCIO HUALLPAMAITA SULLCARANI', '948155027', '40276058', 'JUDITH MOREANO LOZANA', '983989885', '2024-12-04', '2025-01-21 22:40:11'),
+(18, 18, '42142587', 'JONATAN LIMA MERMA', '983839401', '41202577', 'CLARA VILLASANTE MARTINEZ', '983839901', '2024-12-04', '2025-01-21 22:36:40'),
+(19, 19, '07219782', 'GAY MIRANDA NINAPAYTAN', '983617871', '31006164', 'MATILDE ANABEL SARAVIA CERECEDA', '983603280', '2024-12-04', '2025-01-21 22:36:23'),
+(20, 20, '25004809', 'ERIK GUALBERTO MORA ALVAREZ', '934554379', '239561', 'LIZBENIA SANCHEZ TERRAZAS', '962726229', '2024-12-04', '0000-00-00 00:00:00'),
+(21, 21, '42955570', 'MIGUEL ANGEL OTAZU ALARCON', '983791346', '31045351', 'FLOR DE ISABEL AYERBE SEQUEIROS ', '983793029', '2024-12-04', '0000-00-00 00:00:00'),
+(22, 22, '31038608', 'MARIO PIMENTEL DURAND', '951229289', '31033400', 'ANA ESCOBAL SOTO', '958205419', '2024-12-04', '0000-00-00 00:00:00'),
+(23, 23, '40970295', 'CARLOS DAVID PONCE CORDOVA', '959654360', '41206089', 'CONSUELO BENVIDES BELLODA', '957919813', '2024-12-04', '0000-00-00 00:00:00'),
+(24, 24, '42510712', 'ANDELEY PORTILLO OCAÑA', '983655505', '45022814', 'GUISSELA SIHUIN SANCHEZ', '983655202', '2024-12-04', '0000-00-00 00:00:00'),
+(25, 25, '', 'OSCAR RODRIGUEZ CRUZ', '959073255', '80151461', 'CARLA WARTHON VALLE', '973981613', '2024-12-04', '2025-01-22 18:49:37'),
+(26, 26, '31552791', 'ELOY VILLAVICENCIO CHAMPI', '983719791', '42307289', 'PATRICIA VARGAS AYERBE', '958166302', '2024-12-04', '0000-00-00 00:00:00'),
+(27, 27, '44244133', 'JESUS PAREJA CONDORI', '983637302', '43580868', 'BETY SIXTA QUINTANILLA CCOYURE', '983637302', '2024-12-04', '0000-00-00 00:00:00'),
+(28, 28, '31033033', 'JOSE CRUZ MOLINA', '964556373', '31033033', 'JULIA CARRASCO MENDOZA', '929725454', '2025-01-22', '2025-01-22 12:32:04');
 
 -- --------------------------------------------------------
 
@@ -7738,42 +7583,60 @@ CREATE TABLE `pago_pensiones` (
 --
 
 INSERT INTO `pago_pensiones` (`id_pago_pension`, `id_matri`, `concepto`, `id_pension`, `fecha_pago`, `sub_total`, `motivo_edicion`, `created_at`, `updated_at`) VALUES
-(1, 14, 'ADMISION', NULL, '2024-07-20', 100.00, NULL, '2024-07-20', '2024-07-20 10:56:48'),
-(2, 14, 'ALUMNO NUEVO', NULL, '2024-07-20', 250.00, NULL, '2024-07-20', '2024-07-20 10:56:48'),
-(3, 14, 'MATRICULA', NULL, '2024-07-22', 160.00, NULL, '2024-07-20', '2024-07-20 10:56:48'),
-(10, 8, 'ADMISION', NULL, '2024-07-20', 0.00, NULL, '2024-07-20', '2024-07-20 12:33:02'),
-(11, 8, 'ALUMNO NUEVO', NULL, '2024-07-20', 0.00, NULL, '2024-07-20', '2024-07-20 12:33:02'),
-(12, 8, 'MATRICULA', NULL, '2024-07-20', 160.00, NULL, '2024-07-20', '2024-07-20 12:33:02'),
-(31, 25, 'ADMISION', NULL, '2024-07-20', 100.00, NULL, '2024-07-20', '2024-07-20 13:09:06'),
-(32, 25, 'ALUMNO NUEVO', NULL, '2024-07-20', 250.00, NULL, '2024-07-20', '2024-07-20 13:09:06'),
-(33, 25, 'MATRICULA', NULL, '2024-07-20', 160.00, NULL, '2024-07-20', '2024-07-20 13:09:06'),
-(53, 8, 'PENSION', 3, '2024-07-29', 250.00, NULL, '2024-07-29', '0000-00-00 00:00:00'),
-(54, 8, 'PENSION', 4, '2024-07-29', 250.00, NULL, '2024-07-29', '0000-00-00 00:00:00'),
-(55, 14, 'PENSION', 3, '2024-07-29', 250.00, NULL, '2024-07-29', '0000-00-00 00:00:00'),
-(56, 8, 'PENSION', 5, '2024-07-29', 250.00, NULL, '2024-07-29', '0000-00-00 00:00:00'),
-(57, 14, 'PENSION', 4, '2024-07-29', 250.00, NULL, '2024-07-29', '0000-00-00 00:00:00'),
-(58, 8, 'PENSION', 6, '2024-07-29', 250.00, NULL, '2024-07-29', '0000-00-00 00:00:00'),
-(63, 25, 'PENSION', 3, '2024-07-31', 250.00, NULL, '2024-07-31', '0000-00-00 00:00:00'),
-(65, 27, 'ADMISION', NULL, '2024-08-03', 250.00, NULL, '2024-08-03', '2024-08-03 11:55:40'),
-(66, 27, 'ALUMNO NUEVO', NULL, '2024-08-03', 100.00, NULL, '2024-08-03', '2024-08-03 11:55:40'),
-(67, 27, 'MATRICULA', NULL, '2024-08-03', 160.00, NULL, '2024-08-03', '2024-08-03 11:55:40'),
-(68, 27, 'PENSION', 3, '2024-09-08', 250.00, 'MALA DIGITACIóN', '2024-09-08', '2024-10-09 00:00:00'),
-(72, 29, 'ADMISION', NULL, '2024-03-20', 100.00, NULL, '2024-09-10', '2024-09-10 14:12:44'),
-(73, 29, 'ALUMNO NUEVO', NULL, '2024-07-24', 50.00, NULL, '2024-09-10', '2024-09-10 14:12:44'),
-(74, 29, 'MATRICULA', NULL, '2024-07-02', 250.00, NULL, '2024-09-10', '2024-09-10 14:12:44'),
-(75, 29, 'PENSION', 3, '2024-07-02', 250.00, NULL, '2024-09-21', '0000-00-00 00:00:00'),
-(76, 29, 'PENSION', 4, '2024-07-02', 250.00, NULL, '2024-09-21', '0000-00-00 00:00:00'),
-(77, 29, 'PENSION', 5, '2024-07-02', 250.00, NULL, '2024-09-21', '0000-00-00 00:00:00'),
-(79, 25, 'PENSION', 4, '2024-07-02', 250.00, NULL, '2024-09-21', '0000-00-00 00:00:00'),
-(80, 25, 'PENSION', 5, '2024-07-02', 250.00, NULL, '2024-09-21', '0000-00-00 00:00:00'),
-(81, 25, 'PENSION', 6, '2024-07-02', 250.00, NULL, '2024-09-21', '0000-00-00 00:00:00'),
-(92, 27, 'PENSION', 4, '2024-07-10', 250.00, NULL, '2024-10-10', '0000-00-00 00:00:00'),
-(93, 27, 'PENSION', 5, '2024-10-10', 250.00, NULL, '2024-10-10', '0000-00-00 00:00:00'),
-(94, 27, 'PENSION', 6, '2024-10-10', 250.00, NULL, '2024-10-10', '0000-00-00 00:00:00'),
-(95, 27, 'PENSION', 7, '2024-08-10', 250.00, NULL, '2024-10-10', '0000-00-00 00:00:00'),
-(96, 25, 'PENSION', 7, '2024-10-12', 250.00, NULL, '2024-10-12', '0000-00-00 00:00:00'),
-(97, 25, 'PENSION', 8, '2024-10-12', 250.00, NULL, '2024-10-12', '0000-00-00 00:00:00'),
-(98, 25, 'PENSION', 9, '2024-10-12', 250.00, NULL, '2024-10-12', '0000-00-00 00:00:00');
+(102, 32, 'ADMISION', NULL, '2025-01-22', 100.00, NULL, '2025-01-22', '2025-01-22 06:35:40'),
+(103, 32, 'ALUMNO NUEVO', NULL, '2025-01-22', 100.00, NULL, '2025-01-22', '2025-01-22 06:35:40'),
+(104, 32, 'MATRICULA', NULL, '2025-01-22', 250.00, NULL, '2025-01-22', '2025-01-22 06:35:40'),
+(105, 32, 'PENSION', 36, '2025-01-22', 250.00, NULL, '2025-01-22', '0000-00-00 00:00:00'),
+(106, 33, 'ADMISION', NULL, '2025-01-22', 100.00, NULL, '2025-01-22', '2025-01-22 08:51:16'),
+(107, 33, 'ALUMNO NUEVO', NULL, '2025-01-22', 100.00, NULL, '2025-01-22', '2025-01-22 08:51:16'),
+(108, 33, 'MATRICULA', NULL, '2025-01-22', 250.00, NULL, '2025-01-22', '2025-01-22 08:51:16'),
+(109, 34, 'ADMISION', NULL, '2025-01-22', 100.00, NULL, '2025-01-22', '2025-01-22 08:52:35'),
+(110, 34, 'ALUMNO NUEVO', NULL, '2025-01-22', 100.00, NULL, '2025-01-22', '2025-01-22 08:52:35'),
+(111, 34, 'MATRICULA', NULL, '2025-01-22', 250.00, NULL, '2025-01-22', '2025-01-22 08:52:35'),
+(112, 35, 'ADMISION', NULL, '2025-01-22', 100.00, NULL, '2025-01-22', '2025-01-22 08:54:50'),
+(113, 35, 'ALUMNO NUEVO', NULL, '2025-01-22', 100.00, NULL, '2025-01-22', '2025-01-22 08:54:50'),
+(114, 35, 'MATRICULA', NULL, '2025-01-22', 250.00, NULL, '2025-01-22', '2025-01-22 08:54:50'),
+(115, 35, 'PENSION', 36, '2025-01-22', 250.00, NULL, '2025-01-22', '0000-00-00 00:00:00'),
+(116, 36, 'ADMISION', NULL, '2025-01-22', 100.00, NULL, '2025-01-22', '2025-01-22 12:46:23'),
+(117, 36, 'ALUMNO NUEVO', NULL, '2025-01-22', 100.00, NULL, '2025-01-22', '2025-01-22 12:46:23'),
+(118, 36, 'MATRICULA', NULL, '2025-01-22', 250.00, NULL, '2025-01-22', '2025-01-22 12:46:23'),
+(119, 37, 'ADMISION', NULL, '2025-01-22', 100.00, NULL, '2025-01-22', '2025-01-22 12:47:56'),
+(120, 37, 'ALUMNO NUEVO', NULL, '2025-01-22', 100.00, NULL, '2025-01-22', '2025-01-22 12:47:56'),
+(121, 37, 'MATRICULA', NULL, '2025-01-22', 250.00, NULL, '2025-01-22', '2025-01-22 12:47:56'),
+(122, 38, 'ADMISION', NULL, '2025-01-22', 100.00, NULL, '2025-01-22', '2025-01-22 12:54:45'),
+(123, 38, 'ALUMNO NUEVO', NULL, '2025-01-22', 100.00, NULL, '2025-01-22', '2025-01-22 12:54:45'),
+(124, 38, 'MATRICULA', NULL, '2025-01-22', 250.00, NULL, '2025-01-22', '2025-01-22 12:54:45'),
+(125, 39, 'ADMISION', NULL, '2025-01-22', 100.00, NULL, '2025-01-22', '2025-01-22 12:56:35'),
+(126, 39, 'ALUMNO NUEVO', NULL, '2025-01-22', 100.00, NULL, '2025-01-22', '2025-01-22 12:56:35'),
+(127, 39, 'MATRICULA', NULL, '2025-01-22', 250.00, NULL, '2025-01-22', '2025-01-22 12:56:35'),
+(128, 40, 'ADMISION', NULL, '2025-01-22', 100.00, NULL, '2025-01-22', '2025-01-22 12:58:39'),
+(129, 40, 'ALUMNO NUEVO', NULL, '2025-01-22', 100.00, NULL, '2025-01-22', '2025-01-22 12:58:39'),
+(130, 40, 'MATRICULA', NULL, '2025-01-22', 250.00, NULL, '2025-01-22', '2025-01-22 12:58:39'),
+(131, 41, 'ADMISION', NULL, '2025-01-22', 100.00, NULL, '2025-01-22', '2025-01-22 13:00:26'),
+(132, 41, 'ALUMNO NUEVO', NULL, '2025-01-22', 100.00, NULL, '2025-01-22', '2025-01-22 13:00:26'),
+(133, 41, 'MATRICULA', NULL, '2025-01-22', 250.00, NULL, '2025-01-22', '2025-01-22 13:00:26'),
+(134, 42, 'ADMISION', NULL, '2025-01-22', 100.00, NULL, '2025-01-22', '2025-01-22 13:02:13'),
+(135, 42, 'ALUMNO NUEVO', NULL, '2025-01-22', 100.00, NULL, '2025-01-22', '2025-01-22 13:02:13'),
+(136, 42, 'MATRICULA', NULL, '2025-01-22', 250.00, NULL, '2025-01-22', '2025-01-22 13:02:13'),
+(137, 43, 'ADMISION', NULL, '2025-01-22', 100.00, NULL, '2025-01-22', '2025-01-22 13:05:08'),
+(138, 43, 'ALUMNO NUEVO', NULL, '2025-01-22', 100.00, NULL, '2025-01-22', '2025-01-22 13:05:08'),
+(139, 43, 'MATRICULA', NULL, '2025-01-22', 250.00, NULL, '2025-01-22', '2025-01-22 13:05:08'),
+(140, 44, 'ADMISION', NULL, '2025-01-22', 100.00, NULL, '2025-01-22', '2025-01-22 13:06:57'),
+(141, 44, 'ALUMNO NUEVO', NULL, '2025-01-22', 100.00, NULL, '2025-01-22', '2025-01-22 13:06:57'),
+(142, 44, 'MATRICULA', NULL, '2025-01-22', 250.00, NULL, '2025-01-22', '2025-01-22 13:06:57'),
+(143, 33, 'PENSION', 36, '2025-01-22', 250.00, NULL, '2025-01-22', '0000-00-00 00:00:00'),
+(144, 39, 'PENSION', 36, '2025-01-22', 250.00, NULL, '2025-01-22', '0000-00-00 00:00:00'),
+(145, 44, 'PENSION', 36, '2025-01-22', 250.00, NULL, '2025-01-22', '0000-00-00 00:00:00'),
+(146, 37, 'PENSION', 36, '2025-01-22', 250.00, NULL, '2025-01-22', '0000-00-00 00:00:00'),
+(147, 34, 'PENSION', 36, '2025-01-22', 250.00, NULL, '2025-01-22', '0000-00-00 00:00:00'),
+(148, 43, 'PENSION', 36, '2025-01-23', 250.00, NULL, '2025-01-23', '0000-00-00 00:00:00'),
+(149, 40, 'PENSION', 36, '2025-01-23', 250.00, NULL, '2025-01-23', '0000-00-00 00:00:00'),
+(150, 42, 'PENSION', 38, '2025-01-23', 250.00, NULL, '2025-01-23', '0000-00-00 00:00:00'),
+(151, 36, 'PENSION', 39, '2025-01-23', 250.00, NULL, '2025-01-23', '0000-00-00 00:00:00'),
+(152, 36, 'PENSION', 40, '2025-01-23', 250.00, NULL, '2025-01-23', '0000-00-00 00:00:00'),
+(153, 45, 'ADMISION', NULL, '2025-01-23', 100.00, NULL, '2025-01-23', '2025-01-23 15:40:54'),
+(154, 45, 'ALUMNO NUEVO', NULL, '2025-01-23', 100.00, NULL, '2025-01-23', '2025-01-23 15:40:54'),
+(155, 45, 'MATRICULA', NULL, '2025-01-23', 250.00, NULL, '2025-01-23', '2025-01-23 15:40:54');
 
 -- --------------------------------------------------------
 
@@ -7797,40 +7660,18 @@ CREATE TABLE `pensiones` (
 --
 
 INSERT INTO `pensiones` (`id_pensiones`, `id_nivel_academico`, `mes`, `fecha_vencimiento`, `precio`, `mora`, `created_at`, `updated_at`) VALUES
-(1, 5, 'MARZO', NULL, 0.00, 0.00, NULL, NULL),
-(2, 1, 'FEBRERO', '2024-02-27', 250.00, 15.00, '2024-07-16', '2024-07-16 16:03:42'),
-(3, 1, 'MARZO', '2024-03-31', 250.00, 15.00, '2024-07-16', '2024-07-16 16:05:19'),
-(4, 1, 'ABRIL', '2024-04-30', 250.00, 15.00, '2024-07-16', NULL),
-(5, 1, 'MAYO', '2024-05-30', 250.00, 15.00, '2024-07-16', NULL),
-(6, 1, 'JUNIO', '2024-06-30', 250.00, 15.00, '2024-07-16', NULL),
-(7, 1, 'JULIO', '2024-07-31', 250.00, 15.00, '2024-07-16', NULL),
-(8, 1, 'AGOSTO', '2024-08-30', 250.00, 15.00, '2024-07-16', NULL),
-(9, 1, 'SEPTIEMBRE', '2024-09-30', 250.00, 15.00, '2024-07-16', NULL),
-(10, 1, 'OCTUBRE', '2024-10-30', 250.00, 15.00, '2024-07-16', NULL),
-(11, 1, 'NOVIEMBRE', '2024-11-30', 250.00, 15.00, '2024-07-16', NULL),
-(12, 1, 'DICIEMBRE', '2024-12-20', 250.00, 15.00, '2024-07-16', NULL),
-(13, 2, 'ENERO', '2024-01-31', 300.00, 20.00, '2024-07-16', '0000-00-00 00:00:00'),
-(14, 2, 'FEBRERO', '0000-00-00', 300.00, 20.00, '2024-07-16', '0000-00-00 00:00:00'),
-(15, 2, 'MARZO', '2024-03-30', 300.00, 20.00, '2024-07-16', '0000-00-00 00:00:00'),
-(17, 2, 'ABRIL', '2024-04-30', 300.00, 20.00, '2024-10-10', '0000-00-00 00:00:00'),
-(18, 2, 'MAYO', '2024-05-30', 300.00, 20.00, '2024-10-10', '0000-00-00 00:00:00'),
-(19, 2, 'JUNIO', '2024-06-30', 300.00, 20.00, '2024-10-10', '0000-00-00 00:00:00'),
-(20, 2, 'JULIO', '2024-07-30', 300.00, 20.00, '2024-10-10', '0000-00-00 00:00:00'),
-(21, 2, 'AGOSTO', '2024-08-30', 300.00, 20.00, '2024-10-10', '0000-00-00 00:00:00'),
-(22, 2, 'SEPTIEMBRE', '2024-09-30', 300.00, 20.00, '2024-10-10', '0000-00-00 00:00:00'),
-(23, 2, 'OCTUBRE', '2024-10-30', 300.00, 20.00, '2024-10-10', '0000-00-00 00:00:00'),
-(24, 2, 'NOVIEMBRE', '2024-11-30', 300.00, 20.00, '2024-10-10', '0000-00-00 00:00:00'),
-(25, 2, 'DICIEMBRE', '2024-12-30', 300.00, 20.00, '2024-10-10', '0000-00-00 00:00:00'),
-(26, 3, 'MARZO', '2024-03-30', 300.00, 20.00, '2024-10-10', '0000-00-00 00:00:00'),
-(27, 3, 'ABRIL', '2024-04-30', 300.00, 20.00, '2024-10-10', '0000-00-00 00:00:00'),
-(28, 3, 'MAYO', '2024-05-30', 300.00, 20.00, '2024-10-10', '0000-00-00 00:00:00'),
-(29, 3, 'JUNIO', '2024-06-30', 300.00, 20.00, '2024-10-10', '0000-00-00 00:00:00'),
-(30, 3, 'JULIO', '2024-07-30', 300.00, 20.00, '2024-10-10', '0000-00-00 00:00:00'),
-(31, 3, 'AGOSTO', '2024-08-30', 300.00, 20.00, '2024-10-10', '0000-00-00 00:00:00'),
-(32, 3, 'SEPTIEMBRE', '2024-09-30', 300.00, 20.00, '2024-10-10', '0000-00-00 00:00:00'),
-(33, 3, 'OCTUBRE', '2024-10-30', 300.00, 20.00, '2024-10-10', '0000-00-00 00:00:00'),
-(34, 3, 'NOVIEMBRE', '2024-11-30', 300.00, 20.00, '2024-10-10', '0000-00-00 00:00:00'),
-(35, 3, 'DICIEMBRE', '2024-12-30', 300.00, 20.00, '2024-10-10', '0000-00-00 00:00:00');
+(36, 3, 'ENERO', '2025-01-31', 250.00, 15.00, '2025-01-22', '2025-01-22 06:10:41'),
+(37, 3, 'FEBRERO', '2025-02-28', 250.00, 15.00, '2025-01-22', '2025-01-22 06:11:15'),
+(38, 3, 'MARZO', '2025-03-31', 250.00, 15.00, '2025-01-22', '0000-00-00 00:00:00'),
+(39, 3, 'ABRIL', '2025-04-30', 250.00, 15.00, '2025-01-22', '0000-00-00 00:00:00'),
+(40, 3, 'MAYO', '2025-05-30', 250.00, 15.00, '2025-01-22', '0000-00-00 00:00:00'),
+(41, 3, 'JUNIO', '2025-06-30', 250.00, 15.00, '2025-01-22', '0000-00-00 00:00:00'),
+(42, 3, 'JULIO', '2025-07-31', 250.00, 15.00, '2025-01-22', '0000-00-00 00:00:00'),
+(43, 3, 'AGOSTO', '2025-08-30', 250.00, 15.00, '2025-01-22', '0000-00-00 00:00:00'),
+(44, 3, 'SEPTIEMBRE', '2025-09-30', 250.00, 15.00, '2025-01-22', '0000-00-00 00:00:00'),
+(45, 3, 'OCTUBRE', '2025-10-31', 250.00, 15.00, '2025-01-22', '0000-00-00 00:00:00'),
+(46, 3, 'NOVIEMBRE', '2025-11-29', 250.00, 15.00, '2025-01-22', '0000-00-00 00:00:00'),
+(47, 3, 'DICIEMBRE', '2025-12-23', 250.00, 15.00, '2025-01-22', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -7855,10 +7696,10 @@ CREATE TABLE `periodos` (
 --
 
 INSERT INTO `periodos` (`id_periodo`, `id_año_escolar`, `tipo_perido`, `periodos`, `fecha_inicio`, `fecha_fin`, `estado`, `created_at`, `updated_at`) VALUES
-(12, 2, 'BIMESTRE', 'I BIMESTRE', '2024-03-01', '2024-05-31', 'EN CURSO', '2024-08-26', '0000-00-00 00:00:00'),
-(13, 2, 'BIMESTRE', 'II BIMESTRE', '2024-06-01', '2024-07-31', 'EN CURSO', '2024-08-26', '0000-00-00 00:00:00'),
-(14, 2, 'BIMESTRE', 'III BIMESTRE', '2024-08-01', '2024-09-30', 'EN CURSO', '2024-08-26', '0000-00-00 00:00:00'),
-(39, 2, 'BIMESTRE', 'IV BIMESTRE', '2024-10-01', '2024-12-25', 'EN CURSO', '2024-08-27', '2024-08-27 16:06:24');
+(41, 5, 'BIMESTRE', 'II BIMESTRE', '2025-05-19', '2025-07-11', 'EN CURSO', '2025-01-21', '2025-01-21 17:42:08'),
+(42, 5, 'BIMESTRE', 'III BIMESTRE', '2025-08-04', '2025-10-04', 'EN CURSO', '2025-01-21', '2025-01-21 17:42:08'),
+(44, 5, 'BIMESTRE', 'IV BIMESTRE', '2025-10-20', '2025-12-22', 'EN CURSO', '2025-01-21', '2025-01-21 17:42:38'),
+(47, 5, 'BIMESTRE', 'I BIMESTRE', '2025-01-01', '2025-04-30', 'EN CURSO', '2025-02-10', '2025-02-10 19:11:17');
 
 -- --------------------------------------------------------
 
@@ -7882,16 +7723,18 @@ CREATE TABLE `personal_admi` (
   `id_ausuario` int(11) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Volcado de datos para la tabla `personal_admi`
 --
 
 INSERT INTO `personal_admi` (`personal_adm_id`, `personal_adm_dni`, `personal_adm_nombre`, `personal_adm_apellido`, `personal_adm_tipo`, `personal_adm_sexo`, `personal_adm_fechanacimiento`, `personal_adm_movil`, `personal_adm_nro_alterno`, `personal_adm_direccion`, `personal_adm_estatus`, `personal_adm_fotoperfil`, `id_ausuario`, `created_at`, `updated_at`) VALUES
-(1, '65248747', 'MANUEL', 'FARFAN ARANDO', 'AUXILIAR', 'MASCULINO', '1990-12-12', '987777888', '985412339', 'JR. CUSCO S/N', 'ACTIVO', 'controller/personal_administrativo/fotos/IMG6-7-2024-15-242.jpg', 22, '2024-07-06 12:04:59', '2024-07-06 15:08:09'),
-(4, '11551151', 'YESSICA', 'CHAVEZ ANDRADA', 'PSICOLOGA', 'FEMENINO', '1998-12-12', '995959559', '955926265', 'JR. ARICA N° 544', 'ACTIVO', 'controller/personal_administrativo/fotos/IMG6-7-2024-15-32.jpg', 32, '2024-07-06 14:47:59', '2024-07-06 15:08:17'),
-(5, '95959599', 'ADRIANA', 'CAMACHO VALER', 'ENFERMERA', 'FEMENINO', '1990-07-15', '992929929', '929262222', 'AV. CUSCO N° 477', 'ACTIVO', 'controller/personal_administrativo/fotos/IMG1-8-2024-15-52.webp', 50, '2024-08-01 15:25:03', '2024-08-01 15:26:21');
+(6, '65348866', 'ILDAR ISAI', 'HUAMAN CRUZ', 'ADMINISTRADOR', 'MASCULINO', '1985-05-09', '929725038', '987678765', 'JR. 20 DE JULIO', 'ACTIVO', 'controller/personal_administrativo/fotos/IMG21-1-2025-18-784.png', 55, '2025-01-21 18:08:09', '0000-00-00 00:00:00'),
+(7, '76543231', 'PABLO', 'VARELA VASQUEZ', 'ADMINISTRADOR', 'MASCULINO', '1973-09-21', '912543876', '', 'JR. MAYTA CAPAC 123', 'ACTIVO', 'controller/personal_administrativo/fotos/IMG21-1-2025-18-377.jpg', 56, '2025-01-21 18:19:55', '0000-00-00 00:00:00'),
+(8, '55652376', 'FRANCIE BRIGITT', 'PILLACA ANCCO', 'PSICOLOGA', 'FEMENINO', '1990-11-23', '956454235', '', 'AV. MARTINELLY 1234', 'ACTIVO', 'controller/personal_administrativo/fotos/IMG21-1-2025-18-414.jpg', 57, '2025-01-21 18:29:40', '0000-00-00 00:00:00'),
+(9, '87556673', 'ELSA', 'HUAYHUA AGUILAR', 'ENFERMERA', 'FEMENINO', '1990-12-22', '999343552', '', 'AV. PANAMERICANA 1275', 'ACTIVO', 'controller/personal_administrativo/fotos/IMG21-1-2025-21-328.jpg', 58, '2025-01-21 21:54:32', '0000-00-00 00:00:00'),
+(10, '12435643', 'REHIZER', 'BAIRO CASTILLO', 'AUXILIAR', 'MASCULINO', '1978-09-30', '998665465', '967441132', 'AV.SEONE ESQ. AV. PERU', 'ACTIVO', 'controller/personal_administrativo/fotos/IMG21-1-2025-21-174.gif', 59, '2025-01-21 21:59:38', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -7913,7 +7756,7 @@ CREATE TABLE `roles` (
 --
 
 INSERT INTO `roles` (`Id_rol`, `tipo_rol`, `descripcion`, `estado`, `created_at`, `updated_at`) VALUES
-(1, 'ESTUDIANTE', 'ROL QUE DA PERMISOS A ESTUDIANTE', 'ACTIVO', '2024-06-16 16:14:00', '2024-06-16 16:35:54'),
+(1, 'ESTUDIANTE', 'ROL QUE DA PERMISOS A ESTUDIANTE', 'ACTIVO', '2025-01-02 16:14:00', '2025-01-21 16:19:55'),
 (2, 'DOCENTE', 'PERMISOS QUE EL DOCENTE TENDRA', 'ACTIVO', '2024-06-16 16:25:52', '0000-00-00 00:00:00'),
 (3, 'AUXILIAR', 'EL AUXILIAR ES LA PERSONA QUE REGISTRA LAS ASISTENCIAS', 'ACTIVO', '2024-06-16 16:36:18', '0000-00-00 00:00:00'),
 (4, 'ENFERMERA', 'PERSONA ENCARGADA DE LOS PRIMEROS AUXILIOS Y TRATAR EN ALGUN ACCIDENTE AL PERSONAL DEL COLEGIO', 'ACTIVO', '2024-06-16 16:37:09', '0000-00-00 00:00:00'),
@@ -7929,22 +7772,21 @@ INSERT INTO `roles` (`Id_rol`, `tipo_rol`, `descripcion`, `estado`, `created_at`
 CREATE TABLE `seccion` (
   `seccion_id` int(11) NOT NULL COMMENT 'Codigo auto-incrementado del movimiento del area',
   `seccion_nombre` varchar(50) NOT NULL COMMENT 'nombre del area',
-  `seccion_descripcion` text DEFAULT NULL,
+  `seccion_descripcion` mediumtext DEFAULT NULL,
   `seccion_estado` enum('ACTIVO','INACTIVO') NOT NULL COMMENT 'estado del area',
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp() COMMENT 'fecha del registro del movimiento',
   `updated_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci COMMENT='Entidad Area' ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='Entidad Area' ROW_FORMAT=DYNAMIC;
 
 --
 -- Volcado de datos para la tabla `seccion`
 --
 
 INSERT INTO `seccion` (`seccion_id`, `seccion_nombre`, `seccion_descripcion`, `seccion_estado`, `created_at`, `updated_at`) VALUES
-(2, 'B', 'SON ESTUDIANTES PROMEDIO', 'ACTIVO', '2024-06-17 21:30:49', '0000-00-00 00:00:00'),
-(3, 'C', 'SON ESTUDIANTES CON PROBLEMAS EN EL AREA ACADéMICA', 'ACTIVO', '2024-06-17 21:31:04', '0000-00-00 00:00:00'),
-(6, 'A', 'SECCIóN PARA ALUMNOS CON MAYOR RENDIMIENTO ACADEMICO', 'ACTIVO', '2024-06-23 16:37:13', '0000-00-00 00:00:00'),
-(7, 'UNICO', 'AULA UNICA PARA COLEGIOS PRIVADOS', 'ACTIVO', '2024-06-23 16:37:27', '0000-00-00 00:00:00'),
-(8, 'D', 'ES SECCION PÁRA MUJERES', 'ACTIVO', '2024-08-02 21:02:07', '0000-00-00 00:00:00');
+(7, 'UNICO', 'AULA UNICA PARA COLEGIOS PRIVADOS', 'ACTIVO', '2025-01-02 16:37:27', '0000-00-00 00:00:00'),
+(9, 'A', 'SECCION PARA ALUMNOS CON MAYOR RENDIMIENTO ACADEMICO', 'ACTIVO', '2025-01-02 22:52:51', '0000-00-00 00:00:00'),
+(10, 'B', 'SECCION PARA ESTUDIANTES PROMEDIO', 'ACTIVO', '2025-01-02 22:54:23', '0000-00-00 00:00:00'),
+(11, 'TODOS', 'TODOS', 'ACTIVO', '2025-01-23 20:51:32', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -7970,17 +7812,8 @@ CREATE TABLE `tareas` (
 --
 
 INSERT INTO `tareas` (`id_tarea`, `id_detalle_asignatura`, `tema`, `descripcion`, `fecha_entrega`, `archivo_tarea`, `estado`, `created_at`, `updated_at`, `doc_ncorrelativo`) VALUES
-('T0000001', 20, 'CALIGRAFIA2', 'DESARROLLAR EL EJERCICIO DE CALIGRAFIA2', '2024-07-09 17:38:46', 'controller/tareas/documentos/1723070700', 'FINALIZADO', '2024-08-07', '2024-09-23 14:20:12', 1),
-('T0000002', 22, 'SUMA Y RESTA', 'REALIZAR LA SUMA Y RESTA', '2024-08-08 17:47:19', 'controller/tareas/documentos/1723070869', 'FINALIZADO', '2024-08-07', '2024-09-23 14:20:12', 2),
-('T0000003', 67, 'TABLA PERIODICA2', 'DIBUJAR LA TABLA PERIODICA2', '2024-09-12 16:40:49', 'controller/tareas/documentos/1726005633', 'FINALIZADO', '2024-09-10', '2024-09-23 14:20:12', 3),
-('T0000004', 67, 'EJERCICIOS A RESOLVER', 'RESOLVER LOS EJERCICIOS QUE SE DEJO COMO TAREA', '2024-09-13 16:44:38', 'controller/tareas/documentos/1726005454', 'FINALIZADO', '2024-09-10', '2024-09-23 14:20:12', 4),
-('T0000005', 64, 'FUNCIONES', 'DESARROLLAR LAS FUNCIONES QUE SE MUESTRAN EN PANTALLA', '2024-09-12 14:57:58', 'controller/tareas/documentos/1726084715', 'FINALIZADO', '2024-09-11', '2024-09-23 14:20:12', 5),
-('T0000006', 66, 'EJERCICIOS', 'RESOLVER EJERCICIOS', '2024-09-26 14:18:21', 'controller/tareas/documentos/1727119124', 'FINALIZADO', '2024-09-23', '2024-09-23 14:22:46', 6),
-('T0000007', 67, 'EJERCICIOS', 'RESOLVER EJERCICIOS EN QUIMICA', '2024-09-26 14:18:21', 'controller/tareas/documentos/1727119153', 'FINALIZADO', '2024-09-23', '2024-09-23 14:20:12', 7),
-('T0000008', 46, 'CUERPO HUMANO', 'INVESTIGAR EN INTERNET Y SACAR PARTES DEL CUERPO HUMANO', '2024-10-16 16:05:36', 'controller/tareas/documentos/1728507978', 'PENDIENTE', '2024-10-09', '0000-00-00 00:00:00', 8),
-('T0000009', 24, 'CALIGRAFIA', 'EJERCICIOS', '2024-10-10 15:55:00', 'controller/tareas/documentos/1728593614', 'FINALIZADO', '2024-10-10', '0000-00-00 00:00:00', 9),
-('T0000010', 64, 'ECUACIONES', 'DESARROLLAR LOS EJERCICIOS', '2024-10-22 09:08:13', 'controller/tareas/documentos/1728742143', 'PENDIENTE', '2024-10-12', '0000-00-00 00:00:00', 10),
-('T0000011', 66, 'EJERCICO DE GRAVEDAD', 'DESARROLLAR LOS EJERCICIOS DE GRAVEDAD QUE ESTAN EN EL ARCHIVO PDF', '2024-10-14 16:39:39', 'controller/tareas/documentos/1728855619', 'PENDIENTE', '2024-10-13', '0000-00-00 00:00:00', 11);
+('T0000001', 87, 'LA EUCARISTIA', 'EL ALUMNO DEBE DE REALIZAR UNA MONOGRAFIA SOBRE LA EUCARISTIA,SE HARA REVISION DE COPIA POR ORIGINALIDAD', '2025-01-29 11:30:19', 'controller/tareas/documentos/tarea_alumnos_1737563624', 'FINALIZADO', '2025-01-22', '2025-01-22 16:43:14', 1),
+('T0000002', 87, 'BAUTIZO', 'HACER UNA MONOGRAFIA', '2025-02-17 18:14:42', 'controller/tareas/documentos/tarea_alumnos_1739229650', 'PENDIENTE', '2025-02-10', '0000-00-00 00:00:00', 2);
 
 -- --------------------------------------------------------
 
@@ -7998,33 +7831,42 @@ CREATE TABLE `usuario` (
   `empresa_id` int(11) DEFAULT 1,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
 INSERT INTO `usuario` (`usu_id`, `usu_usuario`, `usu_contra`, `usu_email`, `usu_estatus`, `rol_id`, `empresa_id`, `created_at`, `updated_at`) VALUES
-(9, 'JERSSON123', '$2y$12$p9laoSBws/oUR0yPfYmDaO1XpBZV37.qfv2Uzns2iaUE3lqIh0cQq', 'jersson14071996@gmail.com', 'ACTIVO', 9, 1, '2024-06-17 09:08:34', NULL),
-(10, 'JOSE', '$2y$12$OFdwUIOo./CC.vnSX.73LeKctoIi.kB632x0q42O9cB.gJMdFu5iC', 'jose1996@gmail.com', 'ACTIVO', 2, 1, '2024-07-01 15:54:13', NULL),
-(11, 'jorge', '$2y$12$p9laoSBws/oUR0yPfYmDaO1XpBZV37.qfv2Uzns2iaUE3lqIh0cQq', 'jorge@gmail.com', 'ACTIVO', 2, 1, '2024-07-01 17:12:58', '0000-00-00 00:00:00'),
-(12, 'YENI123', '$2y$12$p9laoSBws/oUR0yPfYmDaO1XpBZV37.qfv2Uzns2iaUE3lqIh0cQq', 'YENI12@GMAIL.COM', 'ACTIVO', 2, 1, '2024-07-01 17:13:56', '0000-00-00 00:00:00'),
-(13, 'YESSICA', '$2y$12$p9laoSBws/oUR0yPfYmDaO1XpBZV37.qfv2Uzns2iaUE3lqIh0cQq', 'YESSICA@GMAIL.COM', 'ACTIVO', 9, 1, '2024-07-01 17:17:27', '0000-00-00 00:00:00'),
-(19, 'joaquin1', '$2y$12$p9laoSBws/oUR0yPfYmDaO1XpBZV37.qfv2Uzns2iaUE3lqIh0cQq', 'joaquin@gmail.com', 'ACTIVO', 2, 1, '2024-07-06 09:29:19', '0000-00-00 00:00:00'),
-(20, 'jesus123', '$2y$12$XLMEugfYc9qUBHSd9tDy1u.JFKqQEF1nVnIaAb5IJO.bWFFn/Vd.G', 'jesus@gmail.com', 'ACTIVO', 2, 1, '2024-07-06 09:39:08', '0000-00-00 00:00:00'),
-(21, 'celia123', '$2y$12$uUo8CxjBR44SQRu5v/lb5OxiHW0.3B7GUyLozQRcwGU9AQMDEDRVi', 'celiam@gmail.com', 'ACTIVO', 2, 1, '2024-07-06 11:03:22', '0000-00-00 00:00:00'),
-(22, 'MANUEL123', '$2y$12$p9laoSBws/oUR0yPfYmDaO1XpBZV37.qfv2Uzns2iaUE3lqIh0cQq', 'manuel@gmail.com', 'ACTIVO', 3, 1, '2024-07-06 12:03:30', NULL),
-(32, 'yessica2', '$2y$12$HhO5cdWyK/eUXakQbTsDD.eoBb.4Q2Xv.M.LFTGZmoyelXZIJ0/Aa', 'yessica2024@gmail.com', 'ACTIVO', 5, 1, '2024-07-06 14:47:59', '0000-00-00 00:00:00'),
-(33, 'vanesa12', '$2y$12$wdK0BDWldHnpcuRXgtiBKOI3mji/VUe03b3vSVXbhfqGnth0zWqka', 'vanessa21@gmail.com', 'ACTIVO', 2, 1, '2024-07-16 14:59:59', '0000-00-00 00:00:00'),
-(34, 'JOSE21', '$2y$12$p9laoSBws/oUR0yPfYmDaO1XpBZV37.qfv2Uzns2iaUE3lqIh0cQq', 'jose2022@utea.edu.pe', 'ACTIVO', 1, 1, '2024-07-16 16:30:37', NULL),
-(47, 'daniel12', '$2y$12$p9laoSBws/oUR0yPfYmDaO1XpBZV37.qfv2Uzns2iaUE3lqIh0cQq', 'daniel2024@gmail.com', 'ACTIVO', 1, 1, '2024-07-20 10:56:48', '2024-07-20 10:56:48'),
-(48, 'ANDREA20', '$2y$12$p9laoSBws/oUR0yPfYmDaO1XpBZV37.qfv2Uzns2iaUE3lqIh0cQq', 'ANDREA123@GMAIL.COM', 'ACTIVO', 1, 1, '2024-07-20 10:58:07', '2024-07-20 10:58:07'),
-(49, 'ESTEFANY', '$2y$12$p9laoSBws/oUR0yPfYmDaO1XpBZV37.qfv2Uzns2iaUE3lqIh0cQq', 'ESTEFANY12@GMAIL.COM', 'ACTIVO', 1, 1, '2024-07-20 13:09:06', '2024-07-20 13:09:06'),
-(50, 'adriana2', '$2y$12$HhO5cdWyK/eUXakQbTsDD.eoBb.4Q2Xv.M.LFTGZmoyelXZIJ0/Aa', 'adriana12@gmail.com', 'ACTIVO', 4, 1, '2024-08-01 15:25:03', '0000-00-00 00:00:00'),
-(51, 'JUAN12', '$2y$12$W4hhB7qG1A9nkFKfH2sFKO9dLTnq0ZQaX2/zlt9fd1j2wJ0rGY6U2', 'JUAN2024@GMAIL.COM', 'ACTIVO', 1, 1, '2024-08-03 11:55:40', '2024-08-03 11:55:40'),
-(52, 'YESSENIA', '$2y$12$p9laoSBws/oUR0yPfYmDaO1XpBZV37.qfv2Uzns2iaUE3lqIh0cQq', 'YESSENIA2024@GMAIL.COM', 'ACTIVO', 1, 1, '2024-09-10 14:11:48', '2024-09-10 14:11:48'),
-(53, 'JOSE2024', '$2y$12$p9laoSBws/oUR0yPfYmDaO1XpBZV37.qfv2Uzns2iaUE3lqIh0cQq', 'JOSE2024@GMAIL.COM', 'ACTIVO', 1, 1, '2024-09-10 14:12:44', '2024-09-10 14:12:44'),
-(54, 'JHOSEP20', '$2y$12$p9laoSBws/oUR0yPfYmDaO1XpBZV37.qfv2Uzns2iaUE3lqIh0cQq', 'JHOSEP12@GMAIL.COM', 'ACTIVO', 1, 1, '2024-10-08 12:22:35', '2024-10-08 12:22:35');
+(9, 'JORGE123', '$2y$12$p9laoSBws/oUR0yPfYmDaO1XpBZV37.qfv2Uzns2iaUE3lqIh0cQq', 'jorge14071996@gmail.com', 'ACTIVO', 9, 1, '2024-06-17 09:08:34', NULL),
+(55, 'ILDAR2024', '$2y$12$VHF9dLq7Zrmd19i3gbMkluYUSJfbr.pIe5h9fazsfJLL5JpGU6wSy', 'ildar@sedessapientiae.uedu.pe', 'ACTIVO', 9, 1, '2025-01-21 18:08:09', '0000-00-00 00:00:00'),
+(56, 'PABLO2024', '$2y$12$aIpWg6k5ACELtAlaavxkveDR5R0swVs6LVQDmWmjt.ZE8BdyfvJOe', 'pablo@sedessapientiae.edu.pe', 'ACTIVO', 9, 1, '2025-01-21 18:19:55', '0000-00-00 00:00:00'),
+(57, 'FRANCIE2024', '$2y$12$XucneEZLlZ7cA11fMhnoLOWEUaAav6V7SKIeYlJmSf6C.8DvPZLOm', 'francie@sedessapientiae.edu.pe', 'ACTIVO', 5, 1, '2025-01-21 18:29:40', '0000-00-00 00:00:00'),
+(58, 'ELSA2024', '$2y$12$NW6BKEbW7Uln/DOcplUlJub8LM8G7hrlSTQu7yJwSbh6XLBBcNiZG', 'elsa@sedes sapientiae.edu.pe', 'ACTIVO', 4, 1, '2025-01-21 21:54:32', '0000-00-00 00:00:00'),
+(59, 'REHIZER2024', '$2y$12$YQtj5s1NZAOWkEJWkcOPLOdNA/b/NgcR59klRQV.QB5NB4v6xQI/q', 'rehizer@sedessapientiae.edu.pe', 'ACTIVO', 3, 1, '2025-01-21 21:59:38', '0000-00-00 00:00:00'),
+(60, 'silvio2024', '$2y$12$sVVUxM1ZzE2PeD4GNDY58.kHxo/FgD2EL8Efct9REmransCK1CkgW', 'silvio@sedessapientiae.edu.pe', 'ACTIVO', 2, 1, '2025-01-21 22:23:20', '0000-00-00 00:00:00'),
+(61, 'elian2024', '$2y$12$HbtNVPktL3Dmq/0tBsNX5um6Vp7B7u/jhcLeszHkYayBr1/3iuxiW', 'elian@sedessapientiae.edu.pe', 'ACTIVO', 2, 1, '2025-01-21 22:25:57', '0000-00-00 00:00:00'),
+(62, 'JORGE2024', '$2y$12$Lo5ywavJFmqKD5KKU8X.QeXy7qDMg4/KM8x1Grm8bISbP99maZteW', 'jorge@sedessapientiae.edu.pe', 'ACTIVO', 2, 1, '2025-01-21 22:28:25', '0000-00-00 00:00:00'),
+(85, 'FRANKLIN', '$2y$12$pFwXDdOFf0UYP34xSLuZ/ODi1q5xaqbQRqgJuuFwki2iPPcOQn.l.', 'FRANKLIN@SEDESSAPIENTIAE.EDU.PE', 'ACTIVO', 1, 1, '2025-01-22 06:22:45', '2025-01-22 06:22:45'),
+(86, '60053779', '$2y$12$.eYsa/g0N1BxixboOKHJcOchIWPIqClTPQuHJDB2VcP2AYYw1yBBm', '60053779SS@SEDESSAPIENTIAEABANCAY.EDU.PE', 'ACTIVO', 1, 1, '2025-01-22 06:35:40', '2025-01-22 06:35:40'),
+(87, '61356444', '$2y$12$mma3x5tgMZMjoBJDYHK6WO6DqIubyfCCkF4rBtlvq4xHLN9uzRJVG', '61356444SS@SEDESSAPIENTIAEABANCAY.EDU.PE', 'ACTIVO', 1, 1, '2025-01-22 08:51:16', '2025-01-22 08:51:16'),
+(88, '61432609', '$2y$12$RnxF.ZU1wN/vES56MiHZKetHj/N.ceiZoWsX2DersrZuaLQ9jj1Qa', '61432609SS@SEDESSAPIENTIAEABANCAY.EDU.PE', 'ACTIVO', 1, 1, '2025-01-22 08:52:35', '2025-01-22 08:52:35'),
+(89, '60532849', '$2y$12$dxh9xymQfHceVrOJ3B.F5.nVinEXi3OnJTDsC2TTDggoEo4nrIUNG', '60532849SS@SEDESSAPIENTIAEABANCAY.EDU.PE', 'ACTIVO', 1, 1, '2025-01-22 08:54:50', '2025-01-22 08:54:50'),
+(90, 'ELIANA2024', '$2y$12$ABj5XHFLoQcuoy0qh1eQg.XJWUzdi04hMTLCuheLSRT4ADSts9jHK', 'eliana@sedessapientiaeabancay.edu.pe', 'ACTIVO', 2, 1, '2025-01-22 09:24:17', '0000-00-00 00:00:00'),
+(91, 'JULIA2024', '$2y$12$uBYgl3RFEPxfEfHrNzbF6O0h9ei8gAxtR36grXfNfNDn8eUEeOUyG', 'julia@sedessapientiaeabancay.edu.pe', 'ACTIVO', 2, 1, '2025-01-22 09:28:48', '0000-00-00 00:00:00'),
+(92, 'NICOLAS2024', '$2y$12$5dNMLdPjT/B3l.f11tTzWebaNzDWPkd5NgFDxpZupDcvI9EXfRiIS', 'nikolas@sedessapientiaeabancay.edu.pe', 'ACTIVO', 2, 1, '2025-01-22 09:43:20', '0000-00-00 00:00:00'),
+(93, 'DOROTEO2024', '$2y$12$ggJEmmIA5sWFCIRLFbrWKOWtMakQBxaAfDxvCvNiROCWYI5pweogK', 'doroteo@sedessapientiaeabancay.edu.pe', 'ACTIVO', 2, 1, '2025-01-22 10:01:21', '0000-00-00 00:00:00'),
+(94, '61535395', '$2y$12$LdU/YBXRO.MWXYw4Udw2nOi9xG4n/CG6uugVRPeI9PVTAgr7v/nH.', '61535395SS@SEDESSAPIENTIAEABANCAY.EDU.PE', 'ACTIVO', 1, 1, '2025-01-22 12:46:23', '2025-01-22 12:46:23'),
+(95, '7168044S', '$2y$12$LwwwXFvXpDIgaF3HfQaPreRn3eflIyfiWtDaLOPVr1csRbq2i.y0i', '7168044SS@SEDESSAPIENTIAEABANCAY.EDU.PE', 'ACTIVO', 1, 1, '2025-01-22 12:47:56', '2025-01-22 12:47:56'),
+(96, '61356410', '$2y$12$RaGi2uZDk4fB0FgpvHgNseu/Lw318VHEUPWQBg/Ml6Khxb7vHN8m6', '61356410SS@SEDESSAPIENTIAEABANCAY.EDU.PE', 'ACTIVO', 1, 1, '2025-01-22 12:54:45', '2025-01-22 12:54:45'),
+(97, '60657373', '$2y$12$malE9xNIk1sSkyk0Oivjh.d9X6vJkfPbnCqH928t46guRyxX/qFNW', '60657373SS@SEDESSAPIENTIAEABANCAY.EDU.PE', 'ACTIVO', 1, 1, '2025-01-22 12:56:35', '2025-01-22 12:56:35'),
+(98, '61535499', '$2y$12$hsrQcthNhhAduQJvopXBFOiXYdBBu9VE6M.0unxeSEBYsOeLkByQS', '61535499SS@SEDESSAPIENTIAEABANCAY.EDU.PE', 'ACTIVO', 1, 1, '2025-01-22 12:58:39', '2025-01-22 12:58:39'),
+(99, '60384137', '$2y$12$veqVCgr/gv9GwlK6oeRc/.Y6AxOIkrX4MUMMNsjYfhtd4eOE6lZYS', '60384137SS@SEDESSAPIENTIAEABANCAY.EDU.PE', 'ACTIVO', 1, 1, '2025-01-22 13:00:26', '2025-01-22 13:00:26'),
+(100, '61432525', '$2y$12$txEZkQO8A7gdttj6CJ/fjedxhp4ameLBDDaeXXggekm0PyBEUDzvK', '61432525SS@SEDESSAPIENTIAEABANCAY.EDU.PE', 'ACTIVO', 1, 1, '2025-01-22 13:02:13', '2025-01-22 13:02:13'),
+(101, '64641625', '$2y$12$qGvZWSr0zNNJkorxQxF1/uT6e0f8J5sAZZ2oB9/lAawmyv87EbEHy', '64641625SS@SEDESSAPIENTIAEABANCAY.EDU.PE', 'ACTIVO', 1, 1, '2025-01-22 13:05:08', '2025-01-22 13:05:08'),
+(102, '61535537', '$2y$12$VsH5EmEQDd.kfdiCp.yffu4UGbsBZ4eXeOblksyXwuZn2MBSB.E8a', '61535537SS@SEDESSAPIENTIAEABANCAY.EDU.PE', 'ACTIVO', 1, 1, '2025-01-22 13:06:57', '2025-01-22 13:06:57'),
+(103, 'JOSE2024', '$2y$12$EesWwbZSPQjLUF2KLI5kz./ymehyrgb54b65qM/aKmvqFJWS3Kt4.', 'jose@sedessapientiaeabancay.edu.pe', 'ACTIVO', 2, 1, '2025-01-22 13:40:17', '0000-00-00 00:00:00'),
+(104, 'NUEVO', '$2y$12$ycm/ktCbkEw.x7PZDB.1guqQSUHZxx8JPV9nCBIUxIpgAwxFAWnIi', '123@SEDES.COM', 'ACTIVO', 1, 1, '2025-01-23 15:40:54', '2025-01-23 15:40:54');
 
 --
 -- Índices para tablas volcadas
@@ -8292,37 +8134,37 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `alumnos`
 --
 ALTER TABLE `alumnos`
-  MODIFY `Id_alumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `Id_alumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT de la tabla `asignaturas`
 --
 ALTER TABLE `asignaturas`
-  MODIFY `Id_asignatura` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `Id_asignatura` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT de la tabla `asignatura_docente`
 --
 ALTER TABLE `asignatura_docente`
-  MODIFY `Id_asigdocente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `Id_asigdocente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT de la tabla `asistencia`
 --
 ALTER TABLE `asistencia`
-  MODIFY `id_asistencia` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id_asistencia` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
 
 --
 -- AUTO_INCREMENT de la tabla `atencion_salud`
 --
 ALTER TABLE `atencion_salud`
-  MODIFY `id_atencion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_atencion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `aulas`
 --
 ALTER TABLE `aulas`
-  MODIFY `Id_aula` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `Id_aula` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de la tabla `auxiliar`
@@ -8334,37 +8176,37 @@ ALTER TABLE `auxiliar`
 -- AUTO_INCREMENT de la tabla `año_escolar`
 --
 ALTER TABLE `año_escolar`
-  MODIFY `Id_año_escolar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `Id_año_escolar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `comunicados`
 --
 ALTER TABLE `comunicados`
-  MODIFY `id_comunicado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_comunicado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `criterios`
 --
 ALTER TABLE `criterios`
-  MODIFY `id_criterio` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id_criterio` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 
 --
 -- AUTO_INCREMENT de la tabla `detalle_asignatura_docente`
 --
 ALTER TABLE `detalle_asignatura_docente`
-  MODIFY `Id_detalle_asig_docente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+  MODIFY `Id_detalle_asig_docente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
 
 --
 -- AUTO_INCREMENT de la tabla `detalle_tarea`
 --
 ALTER TABLE `detalle_tarea`
-  MODIFY `id_detalle_tarea` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id_detalle_tarea` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT de la tabla `docentes`
 --
 ALTER TABLE `docentes`
-  MODIFY `Id_docente` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `Id_docente` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de la tabla `egresos`
@@ -8382,37 +8224,37 @@ ALTER TABLE `empresa`
 -- AUTO_INCREMENT de la tabla `especialidad`
 --
 ALTER TABLE `especialidad`
-  MODIFY `Id_especilidad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `Id_especilidad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `horarios`
 --
 ALTER TABLE `horarios`
-  MODIFY `id_horario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+  MODIFY `id_horario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 
 --
 -- AUTO_INCREMENT de la tabla `horas_aula`
 --
 ALTER TABLE `horas_aula`
-  MODIFY `id_hora` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id_hora` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT de la tabla `indicadores`
 --
 ALTER TABLE `indicadores`
-  MODIFY `id_indicadores` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_indicadores` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `ingresos`
 --
 ALTER TABLE `ingresos`
-  MODIFY `id_ingreso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_ingreso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
 
 --
 -- AUTO_INCREMENT de la tabla `matricula`
 --
 ALTER TABLE `matricula`
-  MODIFY `id_matricula` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id_matricula` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT de la tabla `nivel_academico`
@@ -8424,7 +8266,7 @@ ALTER TABLE `nivel_academico`
 -- AUTO_INCREMENT de la tabla `notas`
 --
 ALTER TABLE `notas`
-  MODIFY `id_nota_bole` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=235;
+  MODIFY `id_nota_bole` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=237;
 
 --
 -- AUTO_INCREMENT de la tabla `notas_padre`
@@ -8436,31 +8278,31 @@ ALTER TABLE `notas_padre`
 -- AUTO_INCREMENT de la tabla `padres`
 --
 ALTER TABLE `padres`
-  MODIFY `id_papas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_papas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT de la tabla `pago_pensiones`
 --
 ALTER TABLE `pago_pensiones`
-  MODIFY `id_pago_pension` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
+  MODIFY `id_pago_pension` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=156;
 
 --
 -- AUTO_INCREMENT de la tabla `pensiones`
 --
 ALTER TABLE `pensiones`
-  MODIFY `id_pensiones` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id_pensiones` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT de la tabla `periodos`
 --
 ALTER TABLE `periodos`
-  MODIFY `id_periodo` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id_periodo` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT de la tabla `personal_admi`
 --
 ALTER TABLE `personal_admi`
-  MODIFY `personal_adm_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `personal_adm_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
@@ -8472,13 +8314,13 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT de la tabla `seccion`
 --
 ALTER TABLE `seccion`
-  MODIFY `seccion_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo auto-incrementado del movimiento del area', AUTO_INCREMENT=9;
+  MODIFY `seccion_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Codigo auto-incrementado del movimiento del area', AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `usu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `usu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
 
 --
 -- Restricciones para tablas volcadas
@@ -8673,6 +8515,21 @@ CREATE DEFINER=`root`@`localhost` EVENT `actualizar_estado_examen` ON SCHEDULE E
     UPDATE examen
     SET estado = 'REALIZADO'
     WHERE fecha_examen <= NOW() AND estado != 'REALIZADO';
+END$$
+
+CREATE DEFINER=`u486624649_jerry2`@`127.0.0.1` EVENT `actualizar_estado_año_escolar` ON SCHEDULE EVERY 1 DAY STARTS '2024-10-20 15:24:48' ON COMPLETION NOT PRESERVE ENABLE DO BEGIN
+    -- Actualiza el estado de año_escolar a INACTIVO si la fecha_fin es hoy
+    UPDATE año_escolar
+    SET estado = 'INACTIVO'
+    WHERE fecha_fin = CURDATE();
+
+    -- Actualiza el estatus de los alumnos solo si hay algún año_escolar con fecha_fin = hoy
+    UPDATE alumnos
+    SET alum_estatus = 'NO'
+    WHERE alum_estatus = 'SI'
+    AND EXISTS (
+        SELECT 1 FROM año_escolar WHERE fecha_fin = CURDATE()
+    );
 END$$
 
 DELIMITER ;
